@@ -1,20 +1,71 @@
-.app {
+.header {
     display: flex;
     justify-content: space-between;
     border: solid black;
 }
 
+/* Navigation Bar Elements */
+
 .logo {
-    width: 50px;
+    width: 150px;
 }
 
 .nav-items > ul {
+    font-size: 20px;
     display: flex;
-    gap: 25px;
     list-style: none;
 }
 
 .nav-items > ul > li {
-    padding: 2px;
+    padding: 0px 20px;
     margin: 15px;
+}
+
+/* Search Bar Elements */
+
+.search {
+    display: flex;
+    margin: 5px;
+    flex-direction: row;
+}
+
+.search-bar {
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.search-btn {
+    border-style: none;
+    background-color: aqua;
+    width: 90px;
+    height: 30px;   
+}
+
+/* Body Elements */
+
+.restro-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+/* Restaurant Card Elements */
+
+.restro-card {
+    display: flex;
+    width: 250px;
+    height: 350px;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: #F0F0F0;
+}
+
+.restro-card:hover {
+    cursor: pointer;
+}
+
+.restro-card-img {
+    padding: 5px;
+    width: 90%;
 }
