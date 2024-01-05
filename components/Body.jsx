@@ -1,8 +1,18 @@
 import React from "react"
 
+import data from "../data"
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {
+    const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
+    const restroCards = restaurants.map((restaurant) => {
+        return <RestaurantCard
+            name={restaurant.name}
+            cusinies={restaurant.cuisines}
+            ratings={restaurant.avgRating}
+        />
+    })
+
     return <>
         <div className="body">
             <div className="search">
@@ -14,21 +24,7 @@ function Body() {
                 </div>
             </div>
             <div className="restro-container">
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
+                {restroCards}
             </div>
         </div>
     </>

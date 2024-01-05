@@ -25,17 +25,21 @@
 
 .search {
     display: flex;
-    margin: 5px;
+    gap: 2.5px;
     flex-direction: row;
 }
 
 .search-bar {
+    margin: 5px;
+    height: 30px;
     border-radius: 5px;
     border: 2px solid black;
 }
 
 .search-btn {
+    margin: 5px;
     border-style: none;
+    border-radius: 5px;
     background-color: aqua;
     width: 90px;
     height: 30px;   
