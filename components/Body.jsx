@@ -7,9 +7,12 @@ function Body() {
     const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
     const restroCards = restaurants.map((restaurant) => {
         return <RestaurantCard
+            imgID={restaurant.cloudinaryImageId}
             name={restaurant.name}
             cusinies={restaurant.cuisines}
             ratings={restaurant.avgRating}
+            address={restaurant.address}
+            costForTwo={restaurant.costForTwo}
         />
     })
 
