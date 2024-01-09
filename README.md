@@ -22,3 +22,5 @@ In package.json file, you specifiy the required dependencies, with there version
 Before starting to build any application, just create a basic outline or template. Creating a template ahead of coding will solve a lot of problem with the design.
 
 Config Driven UI
+
+If you are rendering same component multiple times, or in a loop, it is always a good practice to add a key to the component. If there is no key added to the component, and you have to render it multiple times, then whenever each new component is added all the components are re-rendered once again. Using index is also a bad practise, as it effects the performance of the application, but it is comparable than not using keys at all.
