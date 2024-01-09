@@ -23,4 +23,26 @@ Before starting to build any application, just create a basic outline or templat
 
 Config Driven UI
 
-If you are rendering same component multiple times, or in a loop, it is always a good practice to add a key to the component. If there is no key added to the component, and you have to render it multiple times, then whenever each new component is added all the components are re-rendered once again. Using index is also a bad practise, as it effects the performance of the application, but it is comparable than not using keys at all.
+If you are rendering same component multiple times, or in a loop, it is always a good practice to add a key to the component. If there is no key added to the component, and you have to render it multiple times, then whenever each new component is added all the components are re-rendered once again. Using index is also a bad practise, as it effects the performance of the application, but it is still comparable than not using keys at all.
+
+## Episode-5
+
+They are two types of exports which are common in the React.
+They are:
+* Named Exports(You can have multiple exports in a file)
+```js
+// Exporting a Named constant
+export const Component;
+
+// Importing a Named constant
+import { Component } from "/src/assets/data";
+```
+
+* Default Exports(You can only have one export in the file)
+```js
+// Exporting a Default constant
+export default Component;
+
+// Importing a Default constant
+import Component from "/src/assets/data";
+```

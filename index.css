@@ -55,6 +55,10 @@
     flex-wrap: wrap;
 }
 
+.top-rated-btn {
+    background-color: blueviolet;
+}
+
 /* Restaurant Card Elements */
 
 .restro-card {

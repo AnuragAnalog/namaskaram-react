@@ -7,7 +7,7 @@
   "name": "namaskaram-react",
   "description": "## Episode-1",
   "version": "1.0.0",
-  "main": "App.js",
+  "main": "/src/App.js",
   "scripts": {
     "test": "jest"
   },

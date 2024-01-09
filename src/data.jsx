@@ -1,4 +1,4 @@
-export default data = {
+const data = {
     "statusCode": 0,
     "data": {
         "cacheExpiryTime": 320,
@@ -2579,3 +2579,5 @@ export default data = {
     "deviceId": "dbbfd23d-1b00-ed84-134d-ab77d6ad5471",
     "csrfToken": "mXx63nkFcMsF-2c9gqzpbnxRSGdWl7KeDe9su7WU"
 };
+
+export default data;
