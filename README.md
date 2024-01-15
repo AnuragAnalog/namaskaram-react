@@ -46,3 +46,31 @@ export default Component;
 // Importing a Default constant
 import Component from "/src/assets/data";
 ```
+
+In React Hooks are nothing but, normal JS functions which react gives to us wwith some specific use-case.
+
+React has a special ability that makes it easier for it to manipulate the DOM elements, that is the reason, why it is fast.
+
+Reconiliation Algorithm(Diff Algorithm) is an algorithm, which is the core of the React project, it is the actual reason, why react is fast and it is the main functional component of the react.
+
+As the name(diff) says, it uses the difference between old and new virtual dom's and updates the UI. It is also known as incremental rendering, the algorithm divide the updating part into different and smaller chunks, which can be rendered concurrently.
+
+It uses Virtual DOM(a data structure) in updating the UI.
+
+## Chapter-6
+
+Monolithic vs Microservices Architecture.
+
+There are two approaches in which you can fetch the data from the API.
+
+* Steps in the first approach
+    * Load the Application
+    * Make an API Call
+    * Render the application
+* Steps in the second approach
+    * Load the Application
+    * Render the application
+    * Make an API Call
+    * Re-render the application
+
+In the react we use second approach, because it provides a better UX compared to the first one.
