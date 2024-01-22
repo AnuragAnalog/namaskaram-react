@@ -8,6 +8,7 @@ function Body() {
     const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
     const [restroCards, setRestroCards] = useState([])
     const [restros, setRestros] = useState(restaurants)
+    const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
         fetchData();
@@ -42,15 +43,18 @@ function Body() {
         setRestros(filtered_restaurant)
     }
 
+    function onSearchHandle(event) {
+        setSearchText(event.target.value)
+    }
+
     return <>
         <div className="body">
             <div className="search">
-                <div className="search-bar">
-                    This is a fucking search bar
-                </div>
-                <div className="search-btn">
+                <input className="search-bar" value={searchText} onChange={onSearchHandle}>
+                </input>
+                <button className="search-btn">
                     Search
-                </div>
+                </button>
             </div>
             <div className="top-rated-btn" onClick={onClickHandle}>
                 Top Rated
