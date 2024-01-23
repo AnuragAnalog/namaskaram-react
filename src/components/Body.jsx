@@ -8,6 +8,7 @@ function Body() {
     const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
     const [restroCards, setRestroCards] = useState([])
     const [restros, setRestros] = useState(restaurants)
+    const [filteredRestro, setFilteredRestro] = useState(restros)
     const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
@@ -15,8 +16,9 @@ function Body() {
     }, [])
 
     useEffect(() => {
-        setRestroCards(restros.map((restro) => {
+        setRestroCards(filteredRestro.map((restro) => {
             return <RestaurantCard
+                id={restro.id}
                 imgID={restro.cloudinaryImageId}
                 name={restro.name}
                 cusinies={restro.cuisines}
@@ -25,7 +27,7 @@ function Body() {
                 costForTwo={restro.costForTwo}
             />  
         }))
-    }, [restros])
+    }, [filteredRestro])
 
     async function fetchData() {
         const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=")
@@ -35,16 +37,23 @@ function Body() {
     }
 
     function onClickHandle() {
-        const filtered_restaurant = restaurants.filter((restaurant) => {
-            return restaurant.avgRating > 4
+        const filtered_restaurant = restros.filter((restro) => {
+            return restro.avgRating > 4
         })
-        console.log(restros)
 
-        setRestros(filtered_restaurant)
+        setFilteredRestro(filtered_restaurant)
     }
 
     function onSearchHandle(event) {
         setSearchText(event.target.value)
+    }
+
+    function onSearchTextHandle() {
+        const filteredRestaurant = restros.filter((restro) => {
+            return restro.name.toLowerCase().includes(searchText.toLowerCase())
+        })
+
+        setFilteredRestro(filteredRestaurant)
     }
 
     return <>
@@ -52,7 +61,7 @@ function Body() {
             <div className="search">
                 <input className="search-bar" value={searchText} onChange={onSearchHandle}>
                 </input>
-                <button className="search-btn">
+                <button className="search-btn" onClick={onSearchTextHandle}>
                     Search
                 </button>
             </div>
