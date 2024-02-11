@@ -5,10 +5,11 @@ import data from "../data"
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {
-    const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
+    // const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
     const [restroCards, setRestroCards] = useState([])
-    const [restros, setRestros] = useState(restaurants)
-    const [filteredRestro, setFilteredRestro] = useState(restros)
+    // const [restros, setRestros] = useState(restaurants)
+    const [restros, setRestros] = useState([])
+    const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
@@ -23,17 +24,22 @@ function Body() {
                 name={restro.name}
                 cusinies={restro.cuisines}
                 ratings={restro.avgRating}
-                address={restro.address}
                 costForTwo={restro.costForTwo}
             />  
         }))
     }, [filteredRestro])
 
     async function fetchData() {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=")
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5048757&lng=78.3584805&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const jsonData = await data.json()
-        // setRestros(jsonData)
-        // console.log(jsonData)
+        var tempData = jsonData.data.cards[4]
+        tempData = tempData.card.card.gridElements.infoWithStyle.restaurants
+        tempData = tempData.map((restro) => {
+            return restro.info
+        })
+
+        setRestros(tempData)
+        setFilteredRestro(tempData)
     }
 
     function onClickHandle() {

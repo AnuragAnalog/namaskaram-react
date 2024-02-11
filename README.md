@@ -74,3 +74,9 @@ There are two approaches in which you can fetch the data from the API.
     * Re-render the application
 
 In the react we use second approach, because it provides a better UX compared to the first one.
+
+At the start, we have used CORS plugin, to fetch the Swiggy API data, to bypass this issue, we can use a CORS proxy website, like (corsproxy.io, crossorigin.me and many more)
+
+## Chapter-7
+
+Routing is a way through which react enables us to navigate between multiple web pages.
