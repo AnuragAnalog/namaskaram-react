@@ -1,14 +1,15 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-import Header from "./components/Header"
-import NavItems from "./components/NavItems"
-import Body from "./components/Body"
-import About from "./components/About"
-import Contact from "./components/Contact"
-import Cart from "./components/Cart"
+import Header from "/src/components/Header"
+import NavItems from "/src/components/NavItems"
+import Body from "/src/components/Body"
+import About from "/src/components/About"
+import Contact from "/src/components/Contact"
+import Cart from "/src/components/Cart"
+import Error from "/src/components/Error"
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 function App() {
     return <>
@@ -17,7 +18,7 @@ function App() {
                 <Header />
                 <NavItems />
             </div>
-            <Body />
+            <Outlet />
         </div>
     </>
 }
@@ -25,20 +26,27 @@ function App() {
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        element: <App />
+        element: <App />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
+            }
+        ],
+        errorElement: <Error />
     },
-    {
-        path: "/about",
-        element: <About />
-    },
-    {
-        path: "/contact",
-        element: <Contact />
-    },
-    {
-        path: "/cart",
-        element: <Cart />
-    }
 ])
 
 const root = ReactDOM.createRoot(

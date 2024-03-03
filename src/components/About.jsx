@@ -3,12 +3,12 @@ import React from "react"
 function About() {
     return (
         <>
-            <head>
-                About US
-            </head>
-            <body>
-                This is the about page
-            </body>
+            <div>
+                <h1> About US </h1>
+                <body>
+                    This is the about page
+                </body>
+            </div>
         </>
     )
 }
