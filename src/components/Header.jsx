@@ -1,6 +1,6 @@
 import React from "react"
 
-import { LOGO_URL } from "./constants";
+import { LOGO_URL } from "/src/utils/constants";
 
 function Header() {
     return <>

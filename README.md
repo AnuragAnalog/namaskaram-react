@@ -79,4 +79,10 @@ At the start, we have used CORS plugin, to fetch the Swiggy API data, to bypass 
 
 ## Chapter-7
 
+**useEffect**
+
+If the dependency array is not present, it will call the useEffect, whenever the component renders
+else if the dependency array is empty, it will only on intial render and once
+else it will render whenever the variable in the dependency array changes
+
 Routing is a way through which react enables us to navigate between multiple web pages.

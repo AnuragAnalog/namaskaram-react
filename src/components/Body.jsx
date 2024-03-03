@@ -2,7 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react";
 
 // import data from "../data"
-import { DATA_URL } from "./constants";
+import { DATA_URL } from "/src/utils/constants";
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {
