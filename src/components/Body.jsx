@@ -1,13 +1,14 @@
 import React from "react"
 import { useState, useEffect } from "react";
 
-import data from "../data"
+// import data from "../data"
+import { DATA_URL } from "./constants";
 import RestaurantCard from "./RestaurantCard";
 
 function Body() {
     // const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
-    const [restroCards, setRestroCards] = useState([])
     // const [restros, setRestros] = useState(restaurants)
+    const [restroCards, setRestroCards] = useState([])
     const [restros, setRestros] = useState([])
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
@@ -30,10 +31,9 @@ function Body() {
     }, [filteredRestro])
 
     async function fetchData() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5048757&lng=78.3584805&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch(DATA_URL)
         const jsonData = await data.json()
-        var tempData = jsonData.data.cards[4]
-        tempData = tempData.card.card.gridElements.infoWithStyle.restaurants
+        var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
         tempData = tempData.map((restro) => {
             return restro.info
         })
