@@ -86,3 +86,16 @@ else if the dependency array is empty, it will only on intial render and once
 else it will render whenever the variable in the dependency array changes
 
 Routing is a way through which react enables us to navigate between multiple web pages.
+
+### Routing in webapps
+
+* Server Side Routing
+    * When a click is made
+    * The request is sent to the server
+    * The server will send a response
+    * And the client will display it
+* Client Side Routing(Single page Application)
+    * When a click is made
+    * The client will render the page by loading the component
+
+In a single-page application, like react, it is just the exchange of components and loading them.
