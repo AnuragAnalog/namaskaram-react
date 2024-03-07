@@ -1,25 +1,31 @@
 import React from "react"
 
-function ItemCard(props) {
-    const { id, item } = props
-    console.log(props)
-    const { info } = item.card
-    console.log(info.imageId)
+import { RUPEE_SYMBOL, MEDIA_API } from "../utils/constants"
+import nofood from "../assets/no-food-img.png"
+import veg from "../assets/veg-symbol.png"
+import nonveg from "../assets/non-veg-symbol.png"
 
-    return (
+function ItemCard(props) {
+    const { id, item, onlyVeg } = props
+    const { info } = item.card
+
+    return onlyVeg && info.isVeg === undefined ? (<>
+    </>) : (
         <>
             <div className="item-card">
-                <div className="item-card-left">
-                    <img src="../assets/veg-symbol.png" alt="veg" />
-                    <h3> {info.name} </h3>
-                    <p> Rs.{info.price / 100 || info.defaultPrice / 100} </p>
-                    <br />
-                    <p> {info.description} </p>
+                <div className="item-card-content">
+                    <div className="item-card-left">
+                        <img className="item-card-veg-option" src={info.isVeg === 1 ? veg : nonveg} alt="veg"/>
+                        <h4 className="item-card-dish-name"> {info.name} </h4>
+                        <p> {RUPEE_SYMBOL}{info.price / 100 || info.defaultPrice / 100} </p>
+                        {/* <br /> */}
+                        <p> {info.description} </p>
+                    </div>
+                    <div className="item-card-right">
+                        <img className="item-card-img" src={info.imageId ? MEDIA_API+info.imageId : nofood} alt={info.imageId} />
+                    </div>
                 </div>
-                <div className="item-card-right">
-                    <img className="item-card-img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/"+info.imageId} alt={info.imageId} />
-                </div>
-                <hr />
+                <hr className="item-card-hr"/>
             </div>
         </>
     )

@@ -79,6 +79,10 @@ At the start, we have used CORS plugin, to fetch the Swiggy API data, to bypass 
 
 ## Chapter-7
 
+**useState**
+
+We cannot use the useState inside a loop, condition or a nested function, it should be used at the top level of the function.
+
 **useEffect**
 
 If the dependency array is not present, it will call the useEffect, whenever the component renders
