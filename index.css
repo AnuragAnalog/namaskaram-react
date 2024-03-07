@@ -105,3 +105,33 @@
 .restro-card-address {
     margin: 0px;
 }
+
+/* Item Cards */
+.item-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 50%;
+    height: 200px;
+}
+
+.item-card-left {
+    width: 70%;
+    height: 100%;
+}
+
+.item-card-right {
+    width: 30%;
+    height: 100%;
+}
+
+.item-card-img {
+    width: 100%;
+    height: 100%;
+}
+
+/* React Elements */
+.link-element {
+    text-decoration: none;
+    color: black;
+}

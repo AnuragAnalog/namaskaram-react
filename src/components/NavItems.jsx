@@ -14,10 +14,10 @@ function NavItems() {
     return <>
         <div className="nav-items">
             <ul>
-                <li> <Link to="/"> Home </Link> </li>
-                <li> <Link to="/about"> About Us </Link> </li>
-                <li> <Link to="/contact"> Contact </Link> </li>
-                <li> <Link to="/cart"> Cart </Link> </li>
+                <li> <Link to="/" className="link-element"> Home </Link> </li>
+                <li> <Link to="/about" className="link-element"> About Us </Link> </li>
+                <li> <Link to="/contact" className="link-element"> Contact </Link> </li>
+                <li> <Link to="/cart" className="link-element"> Cart </Link> </li>
 
                 <button onClick={handleClick}>
                     {logName}
