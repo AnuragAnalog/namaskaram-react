@@ -103,3 +103,68 @@ Routing is a way through which react enables us to navigate between multiple web
     * The client will render the page by loading the component
 
 In a single-page application, like react, it is just the exchange of components and loading them.
+
+## Chapter-8
+
+Difference between the Class based and Functional Components
+
+**Class Components**
+
+This is similar to the class in javasccript, and it is the old way of creating components in the react. You can find the template of the class component below:
+
+```js
+import React from 'react';
+
+class App extends React.Component {
+    constructor(props) {   // This is the constructor of the class, which is called whenever the class is created
+        super(props)   // This is the super constructor of the class, it is used to call the constructor of the parent class
+    }
+
+    componentDidMount() { // This method is called whenever the component is mounted on the screen(after the render method is called)
+    // This method is used to make API calls, and other stuff
+        console.log("Component Mounted")
+    }
+
+    render() { // This method is used to render the component on the screen
+        return (
+            <div>
+                <h1>Hello World</h1>
+            </div>
+        )
+    }
+}
+```
+
+If the parent and child are both class components, then the order in which the components are mounted is, first the parent component is rendered, then it starts rendering the child component, after mounting all the Child components, it will mount the parent component.
+
+* The react lifecycle has two phases:
+    * Render Phase(Has no side effects)
+        In the render phase, it will call the constructor, then the render method.
+    * Commit Phase(Has side effects)
+        In the commit phase, it will call the componentDidMount method.
+* Useful Link: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+* When there are multiple components to be rendered, then multiple render cycles are combined into a single render phase.
+
+**React Lifecycle Methods**
+In the Mounting phase, the following methods are called:
+* constructor
+* render
+* componentDidMount
+
+The update cycle is called whenever the state or props are updated. This happens in three ways:
+* New props are received
+* New state is received(setState())
+* Force Update is called(forceUpdate())
+
+In the Updating phase, the following methods are called:
+* render
+* componentDidUpdate
+
+In the Unmounting phase, the following methods are called:
+* componentWillUnmount(It is called just after the component is removed from the screen)
+
+DOM Manipulation is the most expensive thing while react is loading a component to the web page.
+
+**Functional Components**
+
+This is similar to functions in javascript, and it is the best type of style in creating component in the react.
