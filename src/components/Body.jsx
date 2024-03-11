@@ -1,25 +1,20 @@
 import React from "react"
 import { useState, useEffect } from "react";
-import { Link, useNavigate, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// import data from "../data"
 import { DATA_URL } from "/src/utils/constants";
 import RestaurantCard from "./RestaurantCard";
+import useData from "/src/utils/useData";
 
 function Body() {
-    // const restaurants = data?.data?.cards[2]?.data?.data?.cards?.map((x) => x.data)
-    // const [restros, setRestros] = useState(restaurants)
     const [restroCards, setRestroCards] = useState([])
     const [restros, setRestros] = useState([])
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
-    const navigate = useNavigate()
 
-    function changeRoute(event) {
-        console.log(event.target.id)
-        navigate("/restaurants/"+event.target.id)
-    }
-
+    const res = useData()
+    console.log(res)
+    // setFilteredRestro(restros)
     useEffect(() => {
         fetchData();
     }, [])
@@ -34,7 +29,6 @@ function Body() {
                     cusinies={restro.cuisines}
                     ratings={restro.avgRating}
                     costForTwo={restro.costForTwo}
-                    onClick={() => redirect("/restaurants/"+restro.id)}
                 />
             </Link>
         }))

@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 import Switch from "react-switch"
 
-import { MENU_URL, MEDIA_API } from "/src/utils/constants"
+import { MEDIA_API } from "/src/utils/constants"
 import ItemCategory from "./ItemCategory"
 import NestedItemCategory from "./NestedItemCategory"
+import useResData from "/src/utils/useResData"
 
 function RestaurantMenu() {
-    const [resInfo, setResInfo] = useState(null)
-    const [itemInfo, setItemInfo] = useState(null)
-    const [isVeg, setIsVeg] = useState(false)
     const { resId } = useParams()
-
-    useEffect(() => {
-        fetchMenu()
-    }, [])
-
-    async function fetchMenu() {
-        const res = await fetch(MENU_URL+resId)
-        const jsonData = await res.json()
-        setItemInfo(jsonData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards)
-        setResInfo(jsonData.data.cards[0].card.card.info)
-    }
+    const [isVeg, setIsVeg] = useState(false)
+    const [resInfo, itemInfo] = useResData(resId)
 
     return resInfo === null ? (
         <h1> Loading... </h1>

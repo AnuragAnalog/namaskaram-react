@@ -2,11 +2,11 @@
 
 ## Episode-1
 
-There are many ways in which you can start writing your react code, one using `React.createElement` and other using **JSX**
+There are many ways in which you can start writing your React code, one using `React.`createElement` and another using **JSX****
 
 ## Episode-2
 
-React is not the one that makes the web applications faster, the one that makes faster is the bundlers like Webpack, parcel, Vite and many more like them.
+React is not the one that makes web applications faster, the one that makes them faster is the bundlers like Webpack, parcel, Vite and many more.
 
 The bundler does all the stuff like code minimization, image optimization, HMR, and many more.
 In the package.json file, you specify the required dependencies, with their version numbers. While mentioning the version numbers. If you include a `^` before the version, it installs the latest version of the app(latest means the upgraded minor number), if `~` is present then it installs the latest version of the app(latest means the upgraded patch number) 
@@ -168,3 +168,7 @@ DOM Manipulation is the most expensive thing while react is loading a component 
 **Functional Components**
 
 This is similar to functions in javascript, and it is the best type of style in creating component in the react.
+
+## Chapter-9
+
+Single responsible principle is a principle in which a component should only do one thing, and it should do it well.
