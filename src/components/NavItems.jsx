@@ -1,8 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
+import useCheckInternet from "/src/utils/useCheckInternet"
+
 function NavItems() {
     const [logName, setLogName] = useState("LogIn")
+    const internetStatus = useCheckInternet()
+
     function handleClick() {
         if (logName === "LogIn") {
             setLogName("LogOut")
@@ -14,6 +18,7 @@ function NavItems() {
     return <>
         <div className="nav-items">
             <ul>
+                <li>Online Status {internetStatus ? "🟢" : "🔴"}</li>
                 <li> <Link to="/" className="link-element"> Home </Link> </li>
                 <li> <Link to="/about" className="link-element"> About Us </Link> </li>
                 <li> <Link to="/contact" className="link-element"> Contact </Link> </li>

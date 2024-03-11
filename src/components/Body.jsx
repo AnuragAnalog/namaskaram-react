@@ -2,9 +2,10 @@ import React from "react"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { DATA_URL } from "/src/utils/constants";
 import RestaurantCard from "./RestaurantCard";
+import Offline from "./Offline";
 import useData from "/src/utils/useData";
+import useCheckInternet from "/src/utils/useCheckInternet";
 
 function Body() {
     const [restroCards, setRestroCards] = useState([])
@@ -12,12 +13,11 @@ function Body() {
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
 
-    const res = useData()
-    console.log(res)
-    // setFilteredRestro(restros)
+    const resInfo = useData()
     useEffect(() => {
-        fetchData();
-    }, [])
+        setRestros(resInfo)
+        setFilteredRestro(resInfo)
+    })
 
     useEffect(() => {
         setRestroCards(filteredRestro.map((restro) => {
@@ -33,18 +33,6 @@ function Body() {
             </Link>
         }))
     }, [filteredRestro])
-
-    async function fetchData() {
-        const data = await fetch(DATA_URL)
-        const jsonData = await data.json()
-        var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-        tempData = tempData.map((restro) => {
-            return restro.info
-        })
-
-        setRestros(tempData)
-        setFilteredRestro(tempData)
-    }
 
     function onClickHandle() {
         const filtered_restaurant = restros.filter((restro) => {
@@ -64,6 +52,11 @@ function Body() {
         })
 
         setFilteredRestro(filteredRestaurant)
+    }
+
+    const internetStatus = useCheckInternet()
+    if (internetStatus === false) {
+        return <Offline />
     }
 
     return <>
