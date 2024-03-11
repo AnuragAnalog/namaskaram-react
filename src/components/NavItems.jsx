@@ -23,6 +23,7 @@ function NavItems() {
                 <li> <Link to="/about" className="link-element"> About Us </Link> </li>
                 <li> <Link to="/contact" className="link-element"> Contact </Link> </li>
                 <li> <Link to="/cart" className="link-element"> Cart </Link> </li>
+                <li> <Link to="/grocery" className="link-element"> Grocery </Link> </li>
 
                 <button onClick={handleClick}>
                     {logName}

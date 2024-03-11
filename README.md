@@ -172,3 +172,11 @@ This is similar to functions in javascript, and it is the best type of style in 
 ## Chapter-9
 
 Single responsible principle is a principle in which a component should only do one thing, and it should do it well.
+
+App Chunking or Code Splitting is an important part of the process of deploying the application. It is the process of splitting the code into smaller chunks so that the application can be loaded faster. (It is also known as lazy loading, or dynamic bundling)
+
+To do a lazy loading, the syntax will be
+
+```js
+const Component = React.lazy(() => import('./Component Path'));
+```
