@@ -1,10 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
 .header {
     display: flex;
     justify-content: space-between;
     border: solid black;
 }
 
-/* Navigation Bar Elements */
+Navigation Bar Elements
 .logo {
     width: 150px;
 }
@@ -22,8 +27,7 @@
     margin: 25px 0px;
 }
 
-/* Search Bar Elements */
-
+Search Bar Elements
 .search {
     display: flex;
     flex-direction: row;
@@ -47,8 +51,7 @@
     height: 30px;   
 }
 
-/* Body Elements */
-
+Body Elements
 .restro-container {
     display: flex;
     flex-direction: row;
@@ -60,8 +63,8 @@
     background-color: blueviolet;
 }
 
-/* React Elements */
+React Elements
 .link-element {
     text-decoration: none;
     color: black;
-}
+} */
