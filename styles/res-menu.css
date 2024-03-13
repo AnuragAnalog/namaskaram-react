@@ -1,0 +1,68 @@
+/* Restaurant Menu */
+.res-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    margin: 2.5px;
+}
+
+.res-menu-name {
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 0px;
+}
+
+.res-menu-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+}
+
+.res-menu-cuisines {
+    font-size: 15px;
+    font-weight: bolder;
+    color: gray;
+    margin: 0px;
+}
+
+.res-menu-info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 5px;
+    width: 50%;
+    align-self: center;
+    border: 1px solid black;
+}
+
+.res-menu-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+    /* align-self: left; */
+    border: 1px solid black;
+}
+
+.res-menu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+}
+
+.res-menu-veg-only {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 50%;
+    border: 1px solid black;
+    align-self: center;
+    padding: 0.5%;
+}
+
+.res-menu-veg-only-name {
+    font-size: 20px;
+    font-weight: bolder;
+    margin: -0.15% 0%;
+}

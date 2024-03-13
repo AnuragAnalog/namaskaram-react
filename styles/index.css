@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: solid black;
+}
+
+/* Navigation Bar Elements */
+.logo {
+    width: 150px;
+}
+
+.nav-items > ul {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    list-style: none;
+}
+
+.nav-items > ul > li {
+    padding: 0px 10px;
+    margin: 25px 0px;
+}
+
+/* Search Bar Elements */
+
+.search {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5px;
+}
+
+.search-bar {
+    margin: 5px;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.search-btn {
+    margin: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: aqua;
+    width: 90px;
+    height: 30px;   
+}
+
+/* Body Elements */
+
+.restro-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.top-rated-btn {
+    background-color: blueviolet;
+}
+
+/* React Elements */
+.link-element {
+    text-decoration: none;
+    color: black;
+}
