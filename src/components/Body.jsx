@@ -61,17 +61,17 @@ function Body() {
 
     return <>
         <div className="body">
-            <div className="search">
-                <input className="search-bar" value={searchText} onChange={onSearchHandle}>
+            <div className="flex flex-row gap-5">
+                <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={searchText} onChange={onSearchHandle}>
                 </input>
-                <button className="search-btn" onClick={onSearchTextHandle}>
+                <button className="m-3 w-40 h-8 bg-red-600 rounded-md border-2 border-solid border-black" onClick={onSearchTextHandle}>
                     Search
                 </button>
             </div>
-            <div className="top-rated-btn" onClick={onClickHandle}>
+            <div className="m-3 w-40 h-8 bg-purple-700 text-center rounded-md border-2 border-solid border-black" onClick={onClickHandle}>
                 Top Rated
             </div>
-            <div className="restro-container">
+            <div className="flex flex-wrap content-center gap-5">
                 {restroCards}
             </div>
         </div>

@@ -5,7 +5,7 @@ import { LOGO_URL } from "/src/utils/constants";
 function Header() {
     return <>
         <div className="logo-container">
-            <img className="logo" src={LOGO_URL} />
+            <img className="w-56" src={LOGO_URL} />
         </div>
     </>
 }

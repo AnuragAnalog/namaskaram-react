@@ -16,14 +16,14 @@ function RestaurantMenu() {
         <h1> Loading... </h1>
     ) :(
         <>
-            <div className="res-menu">
-                <div className="res-menu-info">
+            <div className="flex flex-col gap-2 m-2">
+                <div className="flex flex-row gap-5 m-5 w-[50%] self-center border-1 border-solid border-black">
                     <div className="res-menu-left">
-                        <h1 className="res-menu-name"> {resInfo.name} </h1>
-                        <img className="res-menu-img" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
+                        <h1 className="text-4xl font-extrabold m-0"> {resInfo.name} </h1>
+                        <img className="w-[150px] h-[150px] rounded-[5%]" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
                     </div>
                     <div className="res-menu-right">
-                        <h3 className="res-menu-cuisines"> {resInfo.cuisines.join(", ")} </h3>
+                        <h3 className="text-lg font-extrabold m-0 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
                         <ul>
                             <li> Ratings: {resInfo.avgRating} </li>
                             <li> {resInfo.veg ? "VEG" : "Non-veg"} </li>

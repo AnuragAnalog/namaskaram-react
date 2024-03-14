@@ -17,8 +17,8 @@ const Grocery = lazy(() => import("/src/components/Grocery"))
 
 function App() {
     return <>
-        <div className="app">
-            <div className="header">
+        <div className="flex-col">
+            <div className="flex row-auto justify-between">
                 <Header />
                 <NavItems />
             </div>
