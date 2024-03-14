@@ -26,22 +26,20 @@ function ItemCategory(props) {
 
     return (
         <>
-            <div className="item-category">
+            <div className="flex flex-col gap-0 m-1">
                 {/* <Collapsible className="item-category-name" trigger={`${name.toUpperCase()} (${items.length})`}> */}
-                    <h3 className="item-category-name"> {`${name.toUpperCase()} (${itemCount})`} </h3>
-                    <p>
-                        <ul>
-                            {
-                                items.map((item) => {
-                                    return <ItemCard 
-                                                key={item.card.info.id}
-                                                item={item}
-                                                onlyVeg={onlyVeg}
-                                        />
-                                })
-                            }
-                        </ul>
-                    </p>
+                    <h3 className="text-xl m-0 font-extrabold self-center"> {`${name.toUpperCase()} (${itemCount})`} </h3>
+                    <ul>
+                        {
+                            items.map((item) => {
+                                return <ItemCard 
+                                            key={item.card.info.id}
+                                            item={item}
+                                            onlyVeg={onlyVeg}
+                                    />
+                            })
+                        }
+                    </ul>
                 {/* </Collapsible> */}
             </div>
         </>

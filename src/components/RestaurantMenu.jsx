@@ -17,12 +17,12 @@ function RestaurantMenu() {
     ) :(
         <>
             <div className="flex flex-col gap-2 m-2">
-                <div className="flex flex-row gap-5 m-5 w-[50%] self-center border-1 border-solid border-black">
-                    <div className="res-menu-left">
+                <div className="flex flex-row gap-3 m-5 w-[50%] self-center border-1 border-solid border-black">
+                    <div className="flex flex-col gap-1 w-[50%] border border-solid border-black">
                         <h1 className="text-4xl font-extrabold m-0"> {resInfo.name} </h1>
                         <img className="w-[150px] h-[150px] rounded-[5%]" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
                     </div>
-                    <div className="res-menu-right">
+                    <div className="flex flex-col gap-1 w-[50%]">
                         <h3 className="text-lg font-extrabold m-0 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
                         <ul>
                             <li> Ratings: {resInfo.avgRating} </li>
@@ -34,8 +34,8 @@ function RestaurantMenu() {
                     </div>
                 </div>
 
-                <div className="res-menu-veg-only">
-                    <div className="res-menu-veg-only-name"> Veg Only </div>
+                <div className="flex flex-row gap-1 w-[50%] border border-solid border-black self-center p-[0.5%]">
+                    <div className="text-xl font-extrabold mx-[0%] my-[-0.15%]"> Veg Only </div>
                     <Switch onChange={() => {setIsVeg(!isVeg)}} checked={isVeg} />
                 </div>
                 {

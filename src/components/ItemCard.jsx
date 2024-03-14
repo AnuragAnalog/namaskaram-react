@@ -12,20 +12,20 @@ function ItemCard(props) {
     return onlyVeg && info.isVeg === undefined ? (<>
     </>) : (
         <>
-            <div className="item-card">
-                <div className="item-card-content">
-                    <div className="item-card-left">
-                        <img className="item-card-veg-option" src={info.isVeg === 1 ? veg : nonveg} alt="veg"/>
-                        <h4 className="item-card-dish-name"> {info.name} </h4>
+            <div className="flex flex-col m-2 gap-1">
+                <div className="flex flex-row gap-4 w-[50%] h-52 self-center border border-solid border-black">
+                    <div className="w-[70%] h-[100%]">
+                        <img className="w-4 h-4 m-0" src={info.isVeg === 1 ? veg : nonveg} alt="veg"/>
+                        <h4 className="font-extrabold m-0 text-base"> {info.name} </h4>
                         <p> {RUPEE_SYMBOL}{info.price / 100 || info.defaultPrice / 100} </p>
                         {/* <br /> */}
                         <p> {info.description} </p>
                     </div>
-                    <div className="item-card-right">
-                        <img className="item-card-img" src={info.imageId ? MEDIA_API+info.imageId : nofood} alt={info.imageId} />
+                    <div className="w-[25%] h-[100%]">
+                        <img className="w-[100%] h-[100%] rounded-[5%]" src={info.imageId ? MEDIA_API+info.imageId : nofood} alt={info.imageId} />
                     </div>
                 </div>
-                <hr className="item-card-hr"/>
+                <hr className="w-[50%] border border-solid border-gray-500 self-center"/>
             </div>
         </>
     )
