@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom"
 import Switch from "react-switch"
 
 import { MEDIA_API } from "/src/utils/constants"
-import ItemCategory from "./ItemCategory"
-import NestedItemCategory from "./NestedItemCategory"
+import ItemCategory from "/src/components/ItemCategory"
+import NestedItemCategory from "/src/components/NestedItemCategory"
 import useResData from "/src/utils/useResData"
 
 function RestaurantMenu() {

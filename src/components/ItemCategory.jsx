@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Collapsible from "react-collapsible";
 
-import ItemCard from "./ItemCard";
+import ItemCard from "/src/components/ItemCard";
 
 function ItemCategory(props) {
     var vegCount = 0;

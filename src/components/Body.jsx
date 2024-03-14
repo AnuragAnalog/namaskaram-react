@@ -2,8 +2,8 @@ import React from "react"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import RestaurantCard from "./RestaurantCard";
-import Offline from "./Offline";
+import RestaurantCard from "/src/components/RestaurantCard";
+import Offline from "/src/components/Offline";
 import useData from "/src/utils/useData";
 import useCheckInternet from "/src/utils/useCheckInternet";
 
@@ -64,11 +64,11 @@ function Body() {
             <div className="flex flex-row gap-5">
                 <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={searchText} onChange={onSearchHandle}>
                 </input>
-                <button className="m-3 w-40 h-8 bg-red-600 rounded-md border-2 border-solid border-black" onClick={onSearchTextHandle}>
+                <button className="m-3 w-40 h-8 bg-red-600 text-white rounded-md border-2 border-solid border-black" onClick={onSearchTextHandle}>
                     Search
                 </button>
             </div>
-            <div className="m-3 w-40 h-8 bg-purple-700 text-center rounded-md border-2 border-solid border-black" onClick={onClickHandle}>
+            <div className="m-3 w-40 h-8 bg-purple-700 text-white text-center rounded-md border-2 border-solid border-black" onClick={onClickHandle}>
                 Top Rated
             </div>
             <div className="flex flex-wrap content-center gap-5">
