@@ -12,20 +12,23 @@ function ItemCard(props) {
     return onlyVeg && info.isVeg === undefined ? (<>
     </>) : (
         <>
-            <div className="flex flex-col m-2 gap-1">
-                <div className="flex flex-row gap-4 w-[50%] h-52 self-center border border-solid border-black">
+            <div key={id} className="flex flex-col m-2 gap-1">
+                <div className="flex flex-row gap-4 w-[100%] h-52 justify-between border border-solid border-black">
                     <div className="w-[70%] h-[100%] mx-1">
                         <img className="w-4 h-4 m-0" src={info.isVeg === 1 ? veg : nonveg} alt="veg"/>
-                        <h4 className="font-extrabold m-0 text-base"> {info.name} </h4>
+                        <div className="font-extrabold m-0 text-base"> {info.name} </div>
                         <p> {RUPEE_SYMBOL}{info.price / 100 || info.defaultPrice / 100} </p>
                         <br />
                         <p> {info.description} </p>
                     </div>
-                    <div className="w-[25%] h-[100%]">
-                        <img className="w-[100%] h-[100%] rounded-[5%]" src={info.imageId ? MEDIA_API+info.imageId : nofood} alt={info.imageId} />
+                    <div className="w-[25%] h-[100%] content-center flex flex-col">
+                        <div className="absolute">
+                            <button className="p-2 rounded-lg bg-gray-50 shadow-lg"> Add + </button>
+                        </div>
+                        <img className="w-[80%] h-[80%] rounded-[5%]" src={info.imageId ? MEDIA_API+info.imageId : nofood} alt={info.imageId} />
                     </div>
                 </div>
-                <hr className="w-[50%] border border-solid border-gray-500 self-center"/>
+                <hr className="w-[100%] border border-solid border-gray-500 self-center"/>
             </div>
         </>
     )

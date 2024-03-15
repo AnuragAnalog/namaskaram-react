@@ -1,5 +1,7 @@
 import React from "react"
 
+import { MEDIA_API } from "/src/utils/constants"
+
 function RestaurantCard(props) {
     const { id, name, cusinies, ratings, imgID, costForTwo } = props
 
@@ -7,10 +9,9 @@ function RestaurantCard(props) {
     const trunc_cusinies = cusinies.join(", ").length < 30 ? cusinies.join(", ") : cusinies.join(", ").slice(0, 30)+"..."
 
     return <>
-        <div key={id} className="flex flex-col hover:cursor-pointer w-[250px] h-[300px] gap-5 border-2 border-solid border-black bg-white">
-            <img className="w-[95%] h-[75%] self-center m-2 rounded-[10%]" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imgID}`} alt="name"/>
+        <div key={id} className="flex flex-col hover:cursor-pointer hover:bg-gray-300 w-64 h-80 gap-5 border-2 border-solid border-black bg-gray-100 rounded-md">
+            <img className="w-[95%] h-[75%] self-center m-2 rounded-[10%]" src={MEDIA_API+imgID} alt="name"/>
             <div className="mx-2">
-                {/* <h3 className="restro-card-name-untruncted"> {name} </h3> */}
                 <h3 className="m-0 text-xl font-bold font-sans"> {trunc_names} </h3>
                 <h5 className="m-0"> {trunc_cusinies} </h5>
                 <h5 className="m-0"> Rating: {ratings} </h5>
@@ -18,6 +19,19 @@ function RestaurantCard(props) {
             </div>
         </div>
     </>
+}
+
+export const WithPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <>
+                <div>
+                    <label className="absolute bg-black text-white m-2 p-2 rounded-lg"> Promoted </label>
+                    <RestaurantCard {...props} />
+                </div>
+            </>
+        )
+    }
 }
 
 export default RestaurantCard;

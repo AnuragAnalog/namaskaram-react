@@ -180,3 +180,55 @@ To do a lazy loading, the syntax will be
 ```js
 const Component = React.lazy(() => import('./Component Path'));
 ```
+
+## Chapter-10
+
+Tailwind CSS is a utility-first CSS framework, that is used to build the web pages faster. It is a low-level CSS framework, that is used to build the web pages faster.
+
+* Installation
+```bash
+npm install tailwindcss postcss
+```
+
+* Configuration
+```bash
+npx tailwindcss init
+```
+
+* Create a tailwind.config.js file and add the following code
+```js
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+* Create a postcss.config.js file and add the following code
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+  }
+}
+```
+
+## Chapter-11
+
+We have two layers in any React Application
+
+* UI Layer
+    * JSX
+    * CSS
+* Data Layer
+    * States
+    * Props
+    * JS
+
+The UI layer is generally controlled by the data layer, and the data layer is controlled by the API.
