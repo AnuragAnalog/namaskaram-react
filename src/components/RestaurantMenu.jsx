@@ -10,7 +10,16 @@ import useResData from "/src/utils/useResData"
 function RestaurantMenu() {
     const { resId } = useParams()
     const [isVeg, setIsVeg] = useState(false)
+    const [showIndex, setShowIndex] = useState(null)
     const [resInfo, itemInfo] = useResData(resId)
+
+    function checkSameIndex(index) {
+        if (showIndex === index) {
+            setShowIndex(null)
+        } else {
+            setShowIndex(index)
+        }
+    }
 
     return resInfo === null ? (
         <h1> Loading... </h1>
@@ -38,23 +47,29 @@ function RestaurantMenu() {
                     <div className="text-xl font-extrabold mx-[0%] my-[-0.15%]"> Veg Only </div>
                     <Switch onChange={() => {setIsVeg(!isVeg)}} checked={isVeg} />
                 </div>
-                {
-                    itemInfo.map((item) => {
-                        if (item.card.card["@type"].endsWith(".ItemCategory")) {
-                            return <ItemCategory
-                                name={item.card.card.title}
-                                items={item.card.card.itemCards}
-                                onlyVeg={isVeg}
-                            />
-                        } else if (item.card.card["@type"].endsWith(".NestedItemCategory")) {
-                            return <NestedItemCategory 
-                                name={item.card.card.title}
-                                categories={item.card.card.categories}
-                                onlyVeg={isVeg}
-                            />
-                        }
-                    })
-                }
+
+                <div className="flex flex-col gap-3">
+                    {
+                        itemInfo.map((item, index) => {
+                            if (item.card.card["@type"].endsWith(".ItemCategory")) {
+                                // Controlled Component or Lifting State Up
+                                return <ItemCategory
+                                    name={item.card.card.title}
+                                    items={item.card.card.itemCards}
+                                    onlyVeg={isVeg}
+                                    showItems={index === showIndex ? true : false}
+                                    changeShowIndex={() => checkSameIndex(index)}
+                                />
+                            } else if (item.card.card["@type"].endsWith(".NestedItemCategory")) {
+                                return <NestedItemCategory 
+                                    name={item.card.card.title}
+                                    categories={item.card.card.categories}
+                                    onlyVeg={isVeg}
+                                />
+                            }
+                        })
+                    }
+                </div>
             </div>
         </>
     )

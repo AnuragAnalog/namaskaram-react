@@ -171,7 +171,7 @@ This is similar to functions in javascript, and it is the best type of style in 
 
 ## Chapter-9
 
-Single responsible principle is a principle in which a component should only do one thing, and it should do it well.
+A single responsible principle is a principle in which a component should only do one thing, and it should do it well.
 
 App Chunking or Code Splitting is an important part of the process of deploying the application. It is the process of splitting the code into smaller chunks so that the application can be loaded faster. (It is also known as lazy loading, or dynamic bundling)
 
@@ -232,3 +232,5 @@ We have two layers in any React Application
     * JS
 
 The UI layer is generally controlled by the data layer, and the data layer is controlled by the API.
+
+React Developer Tools is one of the best tools to debug the React application, it is available as a Chrome and Firefox extension.
