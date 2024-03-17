@@ -1,17 +1,19 @@
 import React from "react"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
 import Offline from "/src/components/Offline";
 import useData from "/src/utils/useData";
 import useCheckInternet from "/src/utils/useCheckInternet";
+import UserContext from "/src/utils/UserContext";
 
 function Body() {
     const [restroCards, setRestroCards] = useState([])
     const [restros, setRestros] = useState([])
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
+    const { loggedInUser, setUserName } = useContext(UserContext)
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
 
@@ -73,14 +75,17 @@ function Body() {
     return <>
         <div className="body">
             <div className="flex flex-row gap-5">
-                <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={searchText} onChange={onSearchHandle}>
-                </input>
+                <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={searchText} onChange={onSearchHandle} />
                 <button className="m-3 w-40 h-8 bg-blue-50 rounded-md border-2 border-solid border-black" onClick={onSearchTextHandle}>
                     Search
                 </button>
             </div>
             <div className="m-3 w-40 h-8 bg-yellow-50 text-center rounded-md border-2 border-solid border-black" onClick={onClickHandle}>
                 Top Rated
+            </div>
+            <div className="">
+                <label className="m-2"> Logged In User: </label>
+                <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={loggedInUser} onChange={(e) => {setUserName(e.target.value)}}/>
             </div>
             <div className="flex flex-wrap content-center gap-5">
                 {restroCards}

@@ -1,22 +1,34 @@
-import React, { lazy, Suspense } from "react"
+import React, { useState, useEffect, lazy, Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 import Header from "/src/components/Header"
+import Footer from "/src/components/Footer"
 import Body from "/src/components/Body"
 import About from "/src/components/About"
 import Contact from "/src/components/Contact"
 import Cart from "/src/components/Cart"
 import Error from "/src/components/Error"
-import RestaurantMenu from "./components/RestaurantMenu"
+import RestaurantMenu from "/src/components/RestaurantMenu"
+import UserContext from "/src/utils/UserContext.jsx"
 
 const Grocery = lazy(() => import("/src/components/Grocery"))
 
 function App() {
+    const [userName, setUserName] = useState("")
+
+    useEffect(() => {
+        // Make an API call to get the user name/authentication
+        setUserName("Anurag Peddi")
+    }, [])
+
     return <>
-        <div className="flex flex-col">
-            <Header />
-            <Outlet />
+        <div className="flex flex-col gap-2">
+            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </UserContext.Provider>
         </div>
     </>
 }

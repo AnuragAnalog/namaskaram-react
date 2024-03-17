@@ -234,3 +234,10 @@ We have two layers in any React Application
 The UI layer is generally controlled by the data layer, and the data layer is controlled by the API.
 
 React Developer Tools is one of the best tools to debug the React application, it is available as a Chrome and Firefox extension.
+
+React Context is a way to pass the data from the parent component to the child component, without passing the data through the props. It is like a global variable, that is available to all the components in the application. It is like a global central database.
+
+In react, you can a hook called `useContext` to use the context in the component.
+```js
+const value = useContext(Context);
+```
