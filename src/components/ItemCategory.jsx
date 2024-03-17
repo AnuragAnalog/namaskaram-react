@@ -34,7 +34,7 @@ function ItemCategory(props) {
                         showItems && items.map((item) => {
                             return <ItemCard 
                                         key={item.card.info.id}
-                                        item={item}
+                                        item={item.card.info}
                                         onlyVeg={onlyVeg}
                                 />
                         })

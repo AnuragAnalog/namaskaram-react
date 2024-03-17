@@ -1,5 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react"
 import ReactDOM from "react-dom/client"
+import { Provider } from "react-redux"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 import Header from "/src/components/Header"
@@ -10,7 +11,8 @@ import Contact from "/src/components/Contact"
 import Cart from "/src/components/Cart"
 import Error from "/src/components/Error"
 import RestaurantMenu from "/src/components/RestaurantMenu"
-import UserContext from "/src/utils/UserContext.jsx"
+import UserContext from "/src/utils/UserContext"
+import appStore from "./utils/appStore"
 
 const Grocery = lazy(() => import("/src/components/Grocery"))
 
@@ -24,11 +26,13 @@ function App() {
 
     return <>
         <div className="flex flex-col gap-2">
-            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-                <Header />
-                <Outlet />
-                <Footer />
-            </UserContext.Provider>
+            <Provider store={appStore}>
+                <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                    <Header />
+                    <Outlet />
+                    <Footer />
+                </UserContext.Provider>
+            </Provider>
         </div>
     </>
 }
