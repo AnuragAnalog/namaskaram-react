@@ -241,3 +241,28 @@ In react, you can a hook called `useContext` to use the context in the component
 ```js
 const value = useContext(Context);
 ```
+
+## Chapter-12
+
+React and [Redux](https://redux.js.org) are two different things, React is a library, and Redux is a state management library.
+
+> Redux is not mandatory in the React application, but it is a good practice to use it in the application.(If your application is large and scalable)
+
+Using Redux helps us debug the application easily.
+
+* Redux store is a JS Object(very big), that contains the entire state of the application.
+    * Data is stored as a slice in the redux store.
+    * The data is stored in the form of a key-value pair.
+* Storing data in the redux store is done via dispatching and action.
+    * It calls a function called reducer, which is used to update the slice of the store.
+* Reading data from the slice of redux store is done via Selector.
+* Using Selector, we can read the data from the store, and use it in the component. (It is called subscribing to the store)
+
+### Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to the application
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
