@@ -328,6 +328,18 @@ module.exports = {
 }
 ```
 
+* Jest Configuration
+```bash
+npx jest --init
+```
+
+* Install JSDOM
+```bash
+npm install --save-dev jsdom
+```
+
+Testing needs to be done on some environment(browser-like), so we use JSDOM, which is a browser-like environment for testing.
+
 To run the test, you can use the following command
 ```bash
 npm run test # npm test
