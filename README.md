@@ -344,3 +344,6 @@ To run the test, you can use the following command
 ```bash
 npm run test # npm test
 ```
+
+The place to write the test is in the `__tests__` folder, or in the same folder as the component.
+The regex match for the testing files is: "\*\*/\__tests\__/\*\*/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)"
