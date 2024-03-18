@@ -46,7 +46,7 @@ export default Component;
 import Component from "/src/assets/data";
 ```
 
-In React Hooks are nothing but, normal JS functions that react gives to us with some specific use case.
+In React Hooks are nothing but, normal JS functions that React gives to us with some specific use case.
 
 React has a special ability that makes it easier for it to manipulate the DOM elements, that is the reason, why it is fast.
 
@@ -72,7 +72,7 @@ There are two approaches in which you can fetch the data from the API.
     * Make an API Call
     * Re-render the application
 
-In the react we use the second approach, because it provides a better UX compared to the first one.
+In the react we use the second approach because it provides a better UX compared to the first one.
 
 At the start, we used CORS plugin, to fetch the Swiggy API data, to bypass this issue, we can use a CORS proxy website, like (corsproxy.io, crossorigin.me and many more)
 
@@ -96,7 +96,7 @@ Routing is a way through which React enables us to navigate between multiple web
     * When a click is made
     * The request is sent to the server
     * The server will send a response
-    * And the client will display it
+    * The client will display it
 * Client Side Routing(Single page Application)
     * When a click is made
     * The client will render the page by loading the component
@@ -167,13 +167,13 @@ DOM Manipulation is the most expensive thing while react is loading a component 
 
 **Functional Components**
 
-This is similar to functions in javascript, and it is the best type of style in creating component in the react.
+This is similar to functions in javascript, and it is the best type of style in creating components in the react.
 
 ## Chapter-9
 
 A single responsible principle is a principle in which a component should only do one thing, and it should do it well.
 
-App Chunking or Code Splitting is an important part of the process of deploying the application. It is the process of splitting the code into smaller chunks so that the application can be loaded faster. (It is also known as lazy loading, or dynamic bundling)
+App Chunking or Code Splitting is an important part of the process of deploying the application. It is the process of splitting the code into smaller chunks so that the application can be loaded faster. (It is also known as lazy loading or dynamic bundling)
 
 To do a lazy loading, the syntax will be
 
@@ -183,7 +183,7 @@ const Component = React.lazy(() => import('./Component Path'));
 
 ## Chapter-10
 
-Tailwind CSS is a utility-first CSS framework, that is used to build the web pages faster. It is a low-level CSS framework, that is used to build the web pages faster.
+Tailwind CSS is a utility-first CSS framework, that is used to build web pages faster. It is a low-level CSS framework, that is used to build the web pages faster.
 
 * Installation
 ```bash
@@ -275,3 +275,60 @@ If you try to look at the redux state in the console, you will not be able to se
 
 It uses Immer, which is a library that is used to mutate the state in the reducer. (Behind the scenes)
 Either return the new state or mutate the existing state in the reducer.
+
+## Chapter-13
+
+### By Developer
+
+Types of testing in React
+* Unit Testing
+    * Testing one unit/component in isolation
+* Integration Testing
+    * Testing the interaction between two or more units/components
+* End-to-End Testing - e2e Testing 
+    * When the user lands on the page, the flow of user actions between different components is called e2e testing.
+
+React Testing Library uses Jest and Babel under the hood.
+
+**Installation**
+* Install React testing Library
+```bash
+npm install --save-dev @testing-library/react
+```
+
+* Install Jest
+```bash
+npm install --save-dev jest
+```
+
+* Install babel dependencies for Jest
+```bash
+npm install --save-dev babel-jest @babel/preset-env @babel/core
+```
+
+* Configure the babel in the babel.config.js file
+```js
+module.exports = {
+    presets: [
+        ['@babel/preset-env', { targets: { node: 'current' } }]
+    ]
+}
+```
+
+* Configure the Parcel config file(.parcelrc) to disable default babel transpilation
+```json
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{js,mjs,jsx,cjs,ts,tsx}": [
+      "@parcel/transformer-js",
+      "@parcel/transformer-react-refresh-wrap"
+    ]
+  }
+}
+```
+
+To run the test, you can use the following command
+```bash
+npm run test # npm test
+```
