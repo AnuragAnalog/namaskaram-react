@@ -258,6 +258,12 @@ Using Redux helps us debug the application easily.
 * Reading data from the slice of redux store is done via Selector.
 * Using Selector, we can read the data from the store, and use it in the component. (It is called subscribing to the store)
 
+In Vanialla Redux, it is not possible/it is illegal to mutate the state. The state should be immutable.
+In the Redux Toolkit, it is possible to mutate the state, and they have to be mutated in the reducer.
+
+If you try to look at the redux state in the console, you will not be able to see the state, because it is a private state, and it is not accessible to the console.
+
+
 ### Redux Toolkit
 
 - Install @reduxjs/toolkit and react-redux
@@ -266,3 +272,6 @@ Using Redux helps us debug the application easily.
 - Slice (cartSlice)
 - dispatch(action)
 - Selector
+
+It uses Immer, which is a library that is used to mutate the state in the reducer. (Behind the scenes)
+Either return the new state or mutate the existing state in the reducer.
