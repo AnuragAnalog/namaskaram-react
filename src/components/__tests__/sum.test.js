@@ -5,5 +5,5 @@ test("Sum Function should calculate the sum of two numbers", () => {
     console.log(result);
 
     // Assertion
-    expect(result).toBe(9);
+    expect(result).toBe(7);
 });

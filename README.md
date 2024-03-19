@@ -293,7 +293,7 @@ React Testing Library uses Jest and Babel under the hood.
 **Installation**
 * Install React testing Library
 ```bash
-npm install --save-dev @testing-library/react
+npm install --save-dev @testing-library/react @testing-library/jest-dom
 ```
 
 * Install Jest
@@ -303,7 +303,7 @@ npm install --save-dev jest
 
 * Install babel dependencies for Jest
 ```bash
-npm install --save-dev babel-jest @babel/preset-env @babel/core
+npm install --save-dev babel-jest @babel/preset-env @babel/core @babel/preset-react
 ```
 
 * Configure the babel in the babel.config.js file
