@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+import darrow from "/src/assets/down-arrow.png"
 import ItemCard from "/src/components/ItemCard";
 
 function ItemCategory(props) {
@@ -28,7 +29,7 @@ function ItemCategory(props) {
             <div className="flex flex-col w-6/12 m-auto gap-0 shadow-lg bg-gray-200">
                     <div className="flex flex-row justify-between text-xl font-extrabold m-1 p-1 hover:cursor-pointer" onClick={props.changeShowIndex}>
                         <h3> {`${name.toUpperCase()} (${itemCount})`} </h3>
-                        <span> 🔽 </span>
+                        <img src={darrow} className="w-7 h-7"></img>
                     </div>
                     {
                         showItems && items.map((item) => {

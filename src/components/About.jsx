@@ -2,6 +2,7 @@ import React from "react"
 
 import UserClass from "/src/components/UserClass"
 import UserContext from "/src/utils/UserContext"
+import { DEV_INFO } from "../utils/constants"
 
 class About extends React.Component {
     constructor(props) {
@@ -25,7 +26,11 @@ class About extends React.Component {
                     <body>
                         This is the about page
                     </body>
-                    <UserClass name="Anurag Peddi" location="United States of America" contact="+1 (703) 459-6402"/>
+                    <div className="flex flex-wrap w-full m-auto gap-3 border border-black">
+                        {DEV_INFO.map((url) => {
+                            return <UserClass gitLink={url}/>
+                        })}
+                    </div>
                 </div>
             </>
         )
