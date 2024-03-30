@@ -9,8 +9,8 @@ function useData(resId) {
     async function fetchData() {
         const data = await fetch(MENU_URL+resId)
         const jsonData = await data.json()
-        setItemInfo(jsonData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards)
-        setResInfo(jsonData.data.cards[0].card.card.info)
+        setItemInfo(jsonData.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards)
+        setResInfo(jsonData.data.cards[2].card.card.info)
     }
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
@@ -77,24 +77,26 @@ function Body() {
     return <>
         <div className="body">
             <div className="flex flex-row justify-center items-center">
-                <div className="flex flex-row gap-2 m-3 w-72 h-8 bg-red-50 items-center rounded-l-full rounded-r-full border shadow-lg border-solid border-black" onClick={() => {setFilteredRestro(restros)}}>
-                    <div className="w-4 h-4">
-                        <img src={search} alt="Cross Image"/>
+                <div className="flex flex-row justify-center items-center">
+                    <div className="flex flex-row justify-between m-3 p-2 w-96 h-12 bg-red-50 items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={() => {setFilteredRestro(restros)}}>
+                        <div className="w-6 h-6" onClick={onSearchTextHandle}>
+                            <img src={search} alt="Search Image"/>
+                        </div>
+                        <div className="w-10/12 text-gray-400">
+                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
+                        </div>
+                        <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
+                            <img src={cross} alt="Cross Image"/>
+                        </div>
                     </div>
-                    <div className="w-9/12">
-
-                    </div>
-                    <div className="w-4 h-4">
-                        <img src={cross} alt="Cross Image"/>
-                    </div>
+                    {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}
+                    {/* <button className="m-3 w-40 h-8 bg-blue-50 rounded-md border border-solid border-black" onClick={onSearchTextHandle}> */}
+                        {/* Search */}
+                    {/* </button> */}
                 </div>
-                {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}
-                {/* <button className="m-3 w-40 h-8 bg-blue-50 rounded-md border border-solid border-black" onClick={onSearchTextHandle}> */}
-                    {/* Search */}
-                {/* </button> */}
-            </div>
-            <div className="m-3 w-40 h-8 bg-yellow-50 text-center rounded-md border-2 border-solid border-black" onClick={onClickHandle}>
-                Top Rated
+                <div className="flex flex-row w-32 h-12 bg-red-50 active:bg-red-100 justify-center items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={onClickHandle}>
+                    Top Rated
+                </div>
             </div>
             <div className="">
                 <label className="m-2"> Logged In User: </label>
