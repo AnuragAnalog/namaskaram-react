@@ -19,8 +19,10 @@ class UserClass extends React.Component {
 
         this.setState({
             userInfo: data,
-            ...this.state
+            gitLink: this.state.gitLink
         })
+
+        console.log(data)
     }
 
     render() {

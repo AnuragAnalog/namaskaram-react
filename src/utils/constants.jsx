@@ -8,9 +8,11 @@ export const MEDIA_API = "https://media-assets.swiggy.com/swiggy/image/upload/fl
 
 // Currency
 export const RUPEE_SYMBOL = "₹"
+export const DOLLAR_SYMBOL = "$"
 
 // Developer Info
 export const DEV_INFO = [
     "https://api.github.com/users/AnuragAnalog",
-    "https://api.github.com/users/shivamyneni"
+    "https://api.github.com/users/shivamyneni",
+    "https://api.github.com/users/Anuhyapeddi",
 ]

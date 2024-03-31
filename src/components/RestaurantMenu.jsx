@@ -7,6 +7,8 @@ import ItemCategory from "/src/components/ItemCategory"
 import NestedItemCategory from "/src/components/NestedItemCategory"
 import useResData from "/src/utils/useResData"
 
+import star from "/src/assets/star.png"
+
 function RestaurantMenu() {
     const { resId } = useParams()
     const [isVeg, setIsVeg] = useState(false)
@@ -21,29 +23,34 @@ function RestaurantMenu() {
         }
     }
 
+    console.log(resInfo)
+
     return resInfo === null ? (
         <h1> Loading... </h1>
     ) :(
         <>
             <div className="flex flex-col gap-2 m-2">
-                <div className="flex flex-row gap-3 m-5 w-[50%] self-center border-1 border-solid border-black">
-                    <div className="flex flex-col gap-1 w-[50%] border border-solid border-black">
-                        <h1 className="text-4xl font-extrabold m-0"> {resInfo.name} </h1>
-                        <img className="w-[150px] h-[150px] rounded-[5%]" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
-                    </div>
-                    <div className="flex flex-col gap-1 w-[50%]">
-                        <h3 className="text-lg font-extrabold m-0 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
-                        <ul>
-                            <li> Ratings: {resInfo.avgRating} </li>
-                            <li> {resInfo.veg ? "VEG" : "Non-veg"} </li>
-                            <li> {resInfo.costForTwoMessage} </li>
-                            <li> {resInfo.availability.opened ? "Open Until: "+resInfo.availability.nextCloseTime : "Closed"} </li>
-                            <li> Location: {resInfo.locality+" | "+resInfo.areaName+" | "+resInfo.city} </li>
-                        </ul>
-                    </div>
+                <h1 className="text-4xl font-extrabold m-auto"> {resInfo.name} </h1>
+                <div className="flex flex-col gap-1 w-9/12 h-[300px] m-auto justify-center items-center border border-solid border-black">
+                    <img className="w-full h-full object-none rounded-xl" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
+                </div>
+                <h3 className="text-lg font-extrabold w-9/12 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
+                <div className="flex flex-row gap-3 m-auto w-9/12 self-center">
+                    {/* <div className="flex flex-col gap-1 w-[50%]"> */}
+                        <div className="flex flex-row text-sm gap-2 justify-center items-center">
+                            <p className="text-gray-500 font-semibold flex flex-row justify-center items-center">
+                                {resInfo.avgRating}
+                                <img className="w-6 h-4" src={star} alt="star"/>
+                            </p>
+                            <p className="text-gray-500 font-semibold"> {resInfo.veg ? "VEG" : "Non-veg"} </p>
+                            <p className="text-gray-500 font-semibold"> {resInfo.costForTwoMessage} </p>
+                            <p className="text-gray-500 font-semibold"> {resInfo.availability.opened ? "Open Until: "+resInfo.availability.nextCloseTime : "Closed"} </p>
+                            <p className="text-gray-500 font-semibold"> {resInfo.locality+" | "+resInfo.areaName+" | "+resInfo.city} </p>
+                        </div>
+                    {/* </div> */}
                 </div>
 
-                <div className="flex flex-row gap-1 w-[50%] border border-solid border-black self-center p-[0.5%]">
+                <div className="flex flex-row gap-1 w-9/12 self-center p-[0.5%]">
                     <div className="text-xl font-extrabold mx-[0%] my-[-0.15%]"> Veg Only </div>
                     <Switch onChange={() => {setIsVeg(!isVeg)}} checked={isVeg} />
                 </div>

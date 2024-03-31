@@ -27,7 +27,7 @@ function ItemCard(props) {
     </>) : (
         <>
             <div key={key} className="flex flex-col m-2 gap-1">
-                <div className="flex flex-row gap-4 w-[100%] h-52 justify-between border border-solid border-black">
+                <div className="flex flex-row gap-4 w-[100%] h-52 justify-between">
                     <div className="w-[70%] h-[100%] mx-1">
                         <img className="w-4 h-4 m-0" src={item.isVeg === 1 ? veg : nonveg} alt="veg"/>
                         <div className="font-extrabold m-0 text-base"> {item.name} </div>
@@ -35,9 +35,11 @@ function ItemCard(props) {
                         <br />
                         <p> {item.description} </p>
                     </div>
-                    <div className="w-[25%] h-[100%] content-center flex flex-col">
+                    <div className="w-[25%] justify-center items-center flex flex-col">
                         <div className="absolute">
-                            <button className="p-2 rounded-lg bg-gray-50 shadow-lg" onClick={() => addToCart(item)}> Add + </button>
+                            <button className="p-2 rounded-lg bg-white hover:bg-gray-200 text-green-700 font-extrabold shadow-lg" onClick={() => addToCart(item)}>
+                                 Add +
+                            </button>
                         </div>
                         <img className="w-[80%] h-[80%] rounded-[5%]" src={item.imageId ? MEDIA_API+item.imageId : nofood} alt={item.imageId} />
                     </div>

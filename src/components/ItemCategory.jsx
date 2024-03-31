@@ -26,7 +26,7 @@ function ItemCategory(props) {
 
     return (
         <>
-            <div className="flex flex-col w-6/12 m-auto gap-0 shadow-lg bg-gray-200">
+            <div className="flex flex-col w-9/12 m-auto gap-0 shadow-lg rounded-xl bg-gray-200">
                     <div className="flex flex-row justify-between text-xl font-extrabold m-1 p-1 hover:cursor-pointer" onClick={props.changeShowIndex}>
                         <h3> {`${name.toUpperCase()} (${itemCount})`} </h3>
                         <img src={darrow} className="w-7 h-7"></img>

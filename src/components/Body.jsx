@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
 import Offline from "/src/components/Offline";
 import useData from "/src/utils/useData";
+import { DATA_URL } from "/src/utils/constants";
 import useCheckInternet from "/src/utils/useCheckInternet";
 import UserContext from "/src/utils/UserContext";
 import cross from "/src/assets/close.png"
@@ -19,11 +20,10 @@ function Body() {
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
 
-    const resInfo = useData()
+    // const resInfo = useData()
     useEffect(() => {
-        setRestros(resInfo)
-        setFilteredRestro(resInfo)
-    })
+        fetchData()
+    }, [])
 
     useEffect(() => {
         setRestroCards(filteredRestro.map((restro) => {
@@ -49,6 +49,18 @@ function Body() {
         }))
     }, [filteredRestro])
 
+    async function fetchData() {
+        const data = await fetch(DATA_URL)
+        const jsonData = await data.json()
+        var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+        tempData = tempData.map((restro) => {
+            return restro.info
+        })
+
+        setRestros(tempData)
+        setFilteredRestro(tempData)
+    }
+
     function onClickHandle() {
         const filtered_restaurant = restros.filter((restro) => {
             return restro.avgRating > 4
@@ -66,7 +78,10 @@ function Body() {
             return restro.name.toLowerCase().includes(searchText.toLowerCase())
         })
 
+        // console.log(filteredRestaurant)
+
         setFilteredRestro(filteredRestaurant)
+        // console.log(filteredRestro)
     }
 
     const internetStatus = useCheckInternet()
