@@ -16,6 +16,7 @@ function Body() {
     const [restros, setRestros] = useState([])
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
+    const [activeTopRated, setActiveTopRated] = useState(false)
     const { loggedInUser, setUserName } = useContext(UserContext)
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
@@ -61,11 +62,17 @@ function Body() {
         setFilteredRestro(tempData)
     }
 
+    function resetTopRated() {
+        setActiveTopRated(false)
+        setFilteredRestro(restros)
+    }
+
     function onClickHandle() {
-        const filtered_restaurant = restros.filter((restro) => {
+        const filtered_restaurant = filteredRestro.filter((restro) => {
             return restro.avgRating > 4
         })
 
+        setActiveTopRated(true)
         setFilteredRestro(filtered_restaurant)
     }
 
@@ -74,7 +81,7 @@ function Body() {
     }
 
     function onSearchTextHandle() {
-        const filteredRestaurant = restros.filter((restro) => {
+        const filteredRestaurant = filteredRestro.filter((restro) => {
             return restro.name.toLowerCase().includes(searchText.toLowerCase())
         })
 
@@ -83,6 +90,8 @@ function Body() {
         setFilteredRestro(filteredRestaurant)
         // console.log(filteredRestro)
     }
+
+    console.log(activeTopRated)
 
     const internetStatus = useCheckInternet()
     if (internetStatus === false) {
@@ -109,8 +118,12 @@ function Body() {
                         {/* Search */}
                     {/* </button> */}
                 </div>
-                <div className="flex flex-row w-32 h-12 bg-red-50 active:bg-red-100 justify-center items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={onClickHandle}>
-                    Top Rated
+                <div className={"flex flex-row w-32 h-12 bg-red-50 text-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black"}>
+                    <span className="m-auto" onClick={onClickHandle}> Top Rated </span>
+                    {activeTopRated &&
+                        <div className="m-auto w-3 h-3" onClick={resetTopRated}>
+                            <img src={cross} alt="Cross Image"/>
+                        </div>}
                 </div>
             </div>
             <div className="">

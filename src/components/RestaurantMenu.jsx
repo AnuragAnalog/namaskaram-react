@@ -36,18 +36,16 @@ function RestaurantMenu() {
                 </div>
                 <h3 className="text-lg font-extrabold w-9/12 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
                 <div className="flex flex-row gap-3 m-auto w-9/12 self-center">
-                    {/* <div className="flex flex-col gap-1 w-[50%]"> */}
-                        <div className="flex flex-row text-sm gap-2 justify-center items-center">
-                            <p className="text-gray-500 font-semibold flex flex-row justify-center items-center">
-                                {resInfo.avgRating}
-                                <img className="w-6 h-4" src={star} alt="star"/>
-                            </p>
-                            <p className="text-gray-500 font-semibold"> {resInfo.veg ? "VEG" : "Non-veg"} </p>
-                            <p className="text-gray-500 font-semibold"> {resInfo.costForTwoMessage} </p>
-                            <p className="text-gray-500 font-semibold"> {resInfo.availability.opened ? "Open Until: "+resInfo.availability.nextCloseTime : "Closed"} </p>
-                            <p className="text-gray-500 font-semibold"> {resInfo.locality+" | "+resInfo.areaName+" | "+resInfo.city} </p>
-                        </div>
-                    {/* </div> */}
+                    <div className="flex flex-row text-sm gap-2 justify-center items-center">
+                        <p className="text-gray-500 font-semibold flex flex-row justify-center items-center">
+                            {resInfo.avgRating}
+                            <img className="w-6 h-4" src={star} alt="star"/>
+                        </p>
+                        <p className="text-gray-500 font-semibold"> {resInfo.veg ? "VEG" : "Non-veg"} </p>
+                        <p className="text-gray-500 font-semibold"> {resInfo.costForTwoMessage} </p>
+                        <p className="text-gray-500 font-semibold"> {resInfo.availability.opened ? "Open Until: "+resInfo.availability.nextCloseTime : "Closed"} </p>
+                        <p className="text-gray-500 font-semibold"> {resInfo.locality+" | "+resInfo.areaName+" | "+resInfo.city} </p>
+                    </div>
                 </div>
 
                 <div className="flex flex-row gap-1 w-9/12 self-center p-[0.5%]">

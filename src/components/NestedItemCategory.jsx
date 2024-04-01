@@ -1,7 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
+
+import ItemCategory from "/src/components/ItemCategory"
 
 function NestedItemCategory(props) {
-    const {name, categories} = props
+    const {name, categories, onlyVeg} = props
+    const [showIndex, setShowIndex] = useState(null)
+
+    function checkSameIndex(index) {
+        if (showIndex === index) {
+            setShowIndex(null)
+        } else {
+            setShowIndex(index)
+        }
+    }
 
     return (
         <>
@@ -12,14 +23,21 @@ function NestedItemCategory(props) {
                         {
                             categories.map((category, index) => {
                                 return <li key={index}>
-                                    <h4> {category.title} </h4>
+                                    <ItemCategory
+                                                name={category.title}
+                                                items={category.itemCards}
+                                                onlyVeg={onlyVeg}
+                                                showItems={index === showIndex ? true : false}
+                                                changeShowIndex={() => checkSameIndex(index)}
+                                                />
+                                    {/* <h4> {category.title} </h4>
                                     <ul>
                                         {
                                             category.itemCards.map((item, index) => {
-                                                return <li key={index}> {item.card.info.name} </li>
+                                                return <ItemCard key={index} item={item.card.info} />
                                             })
                                         }
-                                    </ul> 
+                                    </ul>  */}
                                 </li>
                             })
                         }
