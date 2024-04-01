@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
 import Offline from "/src/components/Offline";
-import useData from "/src/utils/useData";
+// import useData from "/src/utils/useData";
 import { DATA_URL } from "/src/utils/constants";
 import useCheckInternet from "/src/utils/useCheckInternet";
 import UserContext from "/src/utils/UserContext";
+
+// Image Imports
 import cross from "/src/assets/close.png"
 import search from "/src/assets/magnifying-glass.png"
+
+// Shimmer Imports
+import { ShimmerBody } from "/src/components/Shimmer"
 
 function Body() {
     const [restroCards, setRestroCards] = useState([])
@@ -91,14 +96,12 @@ function Body() {
         // console.log(filteredRestro)
     }
 
-    console.log(activeTopRated)
-
     const internetStatus = useCheckInternet()
     if (internetStatus === false) {
         return <Offline />
     }
 
-    return <>
+    return restroCards.length == 0 ? <ShimmerBody /> : <>
         <div className="body">
             <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row justify-center items-center">
