@@ -11,7 +11,7 @@ test("Should load Contact us component", () => {
     expect(heading).toBeInTheDocument()
 })
 
-test("Should load button in Contact component", () => {
+it("Should load button in Contact component", () => {
     render(<Contact />)
 
     // Method to retrive button element
@@ -34,8 +34,6 @@ describe("Testing the Input buttons", () => {
     
         const inputBoxes = screen.getAllByRole("textbox")
         // It returns an array of all the input fields, which are nothing but DOM elements
-    
-        console.log(inputBoxes[0])
     
         // Method to check the length of the array
         expect(inputBoxes).toHaveLength(3)
