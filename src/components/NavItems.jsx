@@ -1,7 +1,7 @@
-import { useState, useContext } from "react"
+import React, { useState, useContext } from "react"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
-import cart from "/src/assets/cart.png"
+// import cart from "/src/assets/cart.png"
 import userContext from "../utils/UserContext"
 
 function NavItems() {
@@ -27,7 +27,7 @@ function NavItems() {
                 <li> <Link to="/grocery" className="link-element"> Grocery </Link> </li>
                 <li>
                     <Link to="/cart" className="flex flex-row gap-1 justify-center items-center link-element">
-                        <img className="w-6 h-6" src={cart}></img> {cartItems.length !== 0 ? cartItems.length+"Items" : ""}
+                        <img className="w-6 h-6" src={"/src/assets/cart.png"} /> {cartItems.length !== 0 ? cartItems.length+"Items" : ""}
                     </Link>
                 </li>
                 {logName === "LogOut" && <li> {"👤 " + data.loggedInUser} </li>}
