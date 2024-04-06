@@ -8,6 +8,7 @@ import NestedItemCategory from "/src/components/NestedItemCategory"
 import useResData from "/src/utils/useResData"
 
 import star from "/src/assets/star.png"
+import { ShimmerResCard } from "/src/components/Shimmer"
 
 function RestaurantMenu() {
     const { resId } = useParams()
@@ -26,7 +27,7 @@ function RestaurantMenu() {
     console.log(resInfo)
 
     return resInfo === null ? (
-        <h1> Loading... </h1>
+        <ShimmerResCard />
     ) :(
         <>
             <div className="flex flex-col gap-2 m-2">

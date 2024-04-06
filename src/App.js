@@ -10,6 +10,7 @@ import About from "/src/components/About"
 import Contact from "/src/components/Contact"
 import Cart from "/src/components/Cart"
 import Error from "/src/components/Error"
+import LogIn from "/src/components/LogIn"
 import RestaurantMenu from "/src/components/RestaurantMenu"
 import UserContext from "/src/utils/UserContext"
 import appStore from "./utils/appStore"
@@ -57,6 +58,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />
+            },
+            {
+                path: "/login",
+                element: <LogIn />
             },
             {
                 path: "/restaurants/:resId",
