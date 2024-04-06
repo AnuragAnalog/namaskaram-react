@@ -58,6 +58,7 @@ function Body() {
     async function fetchData() {
         const data = await fetch(DATA_URL)
         const jsonData = await data.json()
+        // console.log(jsonData)
         var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
         tempData = tempData.map((restro) => {
             return restro.info

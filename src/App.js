@@ -11,6 +11,8 @@ import Contact from "/src/components/Contact"
 import Cart from "/src/components/Cart"
 import Error from "/src/components/Error"
 import LogIn from "/src/components/LogIn"
+import SignUp from "/src/components/SignUp"
+import Welcome from "/src/components/Welcome"
 import RestaurantMenu from "/src/components/RestaurantMenu"
 import UserContext from "/src/utils/UserContext"
 import appStore from "./utils/appStore"
@@ -62,6 +64,14 @@ const appRouter = createBrowserRouter([
             {
                 path: "/login",
                 element: <LogIn />
+            },
+            {
+                path: "/signup",
+                element: <SignUp />
+            },
+            {
+                path: "/welcome",
+                element: <Welcome />
             },
             {
                 path: "/restaurants/:resId",
