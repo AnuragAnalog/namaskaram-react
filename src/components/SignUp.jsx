@@ -11,7 +11,6 @@ function SignUp() {
     const [error, setError] = useState("")
     const [isSignedUp, setIsSignedUp] = useState(false)
 
-    console.log(email, password, confirmPassword)
     function handleSubmit(event) {
         event.preventDefault()
 
@@ -21,9 +20,7 @@ function SignUp() {
             setIsSignedUp(true)
         }).catch((error) => {
             const errorCode = error.code
-            const errorMessage = error.message
-            setError(errorMessage)
-            console.log(errorMessage)
+            setError(errorCode.split("/")[1].split("-").join(" "))
         })
     }
 
@@ -33,9 +30,10 @@ function SignUp() {
 
     return (
         <>
-            <div className="flex flex-col gap-10 border-2 border-solid border-black m-auto rounded-xl w-6/12">
+            <div className="flex flex-col gap-8 border-2 border-solid border-black m-auto rounded-xl w-6/12">
                 <h1 className="font-bold text-3xl p-4 m-auto"> Sign Up </h1>
                 <form className="flex flex-col gap-2 w-8/12 m-auto" onSubmit={handleSubmit}>
+                    <p className="text-red-500 capitalize m-auto"> {error} </p>
                     <input className="border border-black p-2 m-2 rounded-lg" type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
                     <input className="border border-black p-2 m-2 rounded-lg" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                     <input className="border border-black p-2 m-2 rounded-lg" type="password" placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)}/>

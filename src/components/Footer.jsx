@@ -6,7 +6,7 @@ function Footer() {
     return (
         <>
             {/* <div className="flex flex-col"> */}
-                <div className="flex flex-col w-full h-72 bg-gray-600 gap-24 items-center justify-center bottom-0 fixed">
+                <div className="flex flex-col w-full h-72 bg-gray-600 gap-24 items-center justify-center">
                     <div className="flex flex-row h-20 w-[75%] gap-14 items-center justify-center">
                         <div className="flex flex-col gap-1 text-white">
                             <h1 className="text-2xl"> Get to know us </h1>
