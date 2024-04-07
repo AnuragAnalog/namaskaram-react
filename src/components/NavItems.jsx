@@ -23,8 +23,8 @@ function NavItems() {
     }
 
     return <>
-        <div className="nav-items">
-            <ul className="flex gap-5 p-6 m-6 text-xl align-middle">
+        <div className="bottom-0">
+            <ul className="flex gap-4 p-6 m-6 text-xl">
                 <li> <Link to="/" className="link-element"> Home </Link> </li>
                 <li> <Link to="/about" className="link-element"> About Us </Link> </li>
                 <li> <Link to="/contact" className="link-element"> Contact </Link> </li>
