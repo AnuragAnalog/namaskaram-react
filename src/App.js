@@ -21,6 +21,12 @@ const Grocery = lazy(() => import("/src/components/Grocery"))
 
 function App() {
     const [userName, setUserName] = useState("")
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    const contextInfo = {
+        isLoggedIn: loggedIn, setLoggedIn,
+        loggedInUser: userName, setUserName
+    }
 
     useEffect(() => {
         // Make an API call to get the user name/authentication
@@ -30,7 +36,7 @@ function App() {
     return <>
         <div className="flex flex-col gap-2">
             <Provider store={appStore}>
-                <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <UserContext.Provider value={contextInfo}>
                     <Header />
                     <Outlet />
                     <Footer />

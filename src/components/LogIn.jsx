@@ -1,14 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { signInWithEmailAndPassword } from "firebase/auth"
 
 import { auth } from "/src/firebase"
+import UserContext from "/src/utils/UserContext"
 
 function LogIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+    const { setUserName, isLoggedIn, setLoggedIn } = useContext(UserContext)
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -16,12 +18,15 @@ function LogIn() {
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => { 
             const userInfo = userCredential.user
             console.log(userInfo)
-            setIsLoggedIn(true)
+            setLoggedIn(true)
+            setUserName(userInfo.email)
         }).catch((error) => {
             const errorCode = error.code
             setError(errorCode.split("/")[1].split("-").join(" "))
         })
     }
+
+    console.log(isLoggedIn)
 
     if (isLoggedIn) {
         return <Navigate to="/welcome" />

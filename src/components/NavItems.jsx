@@ -22,7 +22,9 @@ function NavItems() {
         return <Navigate to="/login" replace/>
     }
 
-    return <>
+    console.log(data)
+
+    return (
         <div className="bottom-0">
             <ul className="flex gap-4 p-6 m-6 text-xl">
                 <li> <Link to="/" className="link-element"> Home </Link> </li>
@@ -34,14 +36,14 @@ function NavItems() {
                         <img className="w-6 h-6" src={"/src/assets/cart.png"} /> {cartItems.length !== 0 ? cartItems.length+"Items" : ""}
                     </Link>
                 </li>
-                {logName === "LogOut" && <li> {"👤 " + data.loggedInUser} </li>}
+                {data.isLoggedIn && <li> {"👤 " + data.loggedInUser} </li>}
 
                 <button onClick={handleClick}>
                     {logName}
                 </button>
             </ul>
-        </div> 
-    </>
+        </div>
+    )
 }
 
 export default NavItems;

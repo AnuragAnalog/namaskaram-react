@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
@@ -22,7 +22,8 @@ function Body() {
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
     const [activeTopRated, setActiveTopRated] = useState(false)
-    const { loggedInUser, setUserName } = useContext(UserContext)
+    const { loggedInUser, setUserName, isLoggedIn } = useContext(UserContext)
+    console.log(loggedInUser, setUserName, isLoggedIn)
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
 
