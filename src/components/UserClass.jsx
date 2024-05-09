@@ -28,7 +28,7 @@ class UserClass extends React.Component {
     render() {
         return (
             <>
-                <div className="flex flex-col w-4/12 border border-black rounded-lg bg-orange-100">
+                <div className="flex flex-col w-3/12 border border-black rounded-lg bg-orange-100">
                     <img className="w-[90%] h-[75%] m-auto rounded-lg" src={this.state.userInfo.avatar_url} alt="User Avatar" />
                     <div className="m-2">
                         <h2> Name: {this.state.userInfo.name} </h2>

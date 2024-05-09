@@ -15,4 +15,6 @@ export const DEV_INFO = [
     "https://api.github.com/users/AnuragAnalog",
     "https://api.github.com/users/shivamyneni",
     "https://api.github.com/users/Anuhyapeddi",
+    "https://api.github.com/users/yesdeep",
+    "https://api.github.com/users/abhishekveeravelli",
 ]

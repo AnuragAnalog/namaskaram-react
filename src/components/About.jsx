@@ -16,17 +16,16 @@ class About extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <h1> About US </h1>
-                    <div>
+                <div className="m-auto">
+                    <h1 className="flex flex-col m-auto text-4xl">
+                        Meet our Dev Team
+                    </h1>
+                    {/* <div>
                         <UserContext.Consumer>
                             { (data) => {console.log(data)} }
                         </UserContext.Consumer>
-                    </div>
-                    <body>
-                        This is the about page
-                    </body>
-                    <div className="flex flex-wrap w-full m-auto gap-3 border border-black">
+                    </div> */}
+                    <div className="flex flex-wrap w-10/12 m-auto gap-3">
                         {DEV_INFO.map((url) => {
                             return <UserClass gitLink={url}/>
                         })}

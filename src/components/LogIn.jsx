@@ -26,8 +26,6 @@ function LogIn() {
         })
     }
 
-    console.log(isLoggedIn)
-
     if (isLoggedIn) {
         return <Navigate to="/welcome" />
     }

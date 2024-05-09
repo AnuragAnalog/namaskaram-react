@@ -32,10 +32,12 @@ function RestaurantMenu() {
         <>
             <div className="flex flex-col gap-2 m-2">
                 <h1 className="text-4xl font-extrabold m-auto"> {resInfo.name} </h1>
-                <div className="flex flex-col gap-1 w-9/12 h-[300px] m-auto justify-center items-center border border-solid border-black">
+                <div className="flex flex-col gap-1 w-9/12 h-[300px] m-auto justify-center items-center">
                     <img className="w-full h-full object-none rounded-xl" src={MEDIA_API+resInfo.cloudinaryImageId} alt="name"/>
                 </div>
-                <h3 className="text-lg font-extrabold w-9/12 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
+                <div className="flex flex-row gap-3 m-auto w-9/12 self-center">
+                    <h3 className="text-lg font-extrabold w-9/12 text-slate-500"> {resInfo.cuisines.join(", ")} </h3>
+                </div>
                 <div className="flex flex-row gap-3 m-auto w-9/12 self-center">
                     <div className="flex flex-row text-sm gap-2 justify-center items-center">
                         <p className="text-gray-500 font-semibold flex flex-row justify-center items-center">

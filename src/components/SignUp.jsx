@@ -30,7 +30,7 @@ function SignUp() {
 
     return (
         <>
-            <div className="flex flex-col gap-8 border-2 border-solid border-black m-auto rounded-xl w-6/12">
+            <div className="flex flex-col gap-8 py-10 border-2 border-solid border-black m-auto rounded-xl w-6/12">
                 <h1 className="font-bold text-3xl p-4 m-auto"> Sign Up </h1>
                 <form className="flex flex-col gap-2 w-8/12 m-auto" onSubmit={handleSubmit}>
                     <p className="text-red-500 capitalize m-auto"> {error} </p>

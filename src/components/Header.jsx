@@ -19,7 +19,7 @@ function Header() {
     function handleClick() {
         if (logName === "LogIn") {
             setLogName("LogOut")
-        } else {
+        } else if (logName === "LogOut") {
             setLogName("LogIn")
         }
     }
@@ -27,8 +27,6 @@ function Header() {
     // if (logName === "LogOut") {
     //     return <Navigate to="/login" replace/>
     // }
-
-    console.log(data)
 
     return (
         <div className="flex row-auto justify-between shadow-lg bg-orange-50">
