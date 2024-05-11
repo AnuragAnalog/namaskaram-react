@@ -347,3 +347,8 @@ npm run test # npm test
 
 The place to write the test is in the `__tests__` folder, or in the same folder as the component.
 The regex match for the testing files is: "\*\*/\__tests\__/\*\*/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)"
+
+
+## Error Tips
+
+* Do not update the state from the event handler functions, if you do so, react will ignore the update.

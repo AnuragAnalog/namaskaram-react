@@ -1,6 +1,6 @@
 import React from "react"
 import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
 import Offline from "/src/components/Offline";
@@ -94,13 +94,16 @@ function Body() {
             })
             setFilteredRestro(filteredRestaurant)
             setClickSearch(false)
-            console.log("Filtered Restaurant")
         }
     }, [clickSearch])
 
     const internetStatus = useCheckInternet()
     if (internetStatus === false) {
         return <Offline />
+    }
+
+    if (!isLoggedIn) {
+        return <Navigate to="/login" />
     }
 
     return restroCards.length == 0 ? <ShimmerBody /> : <>

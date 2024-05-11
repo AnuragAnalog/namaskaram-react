@@ -14,6 +14,11 @@ function SignUp() {
     function handleSubmit(event) {
         event.preventDefault()
 
+        if (password !== confirmPassword) {
+            setError("passwords do not match")
+            return
+        }
+
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user
             console.log(user, userCredential)
@@ -25,7 +30,7 @@ function SignUp() {
     }
 
     if (isSignedUp) {
-        return <Navigate to="/welcome" />
+        return <Navigate to="/login" />
     }
 
     return (

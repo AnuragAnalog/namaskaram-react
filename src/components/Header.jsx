@@ -6,27 +6,21 @@ import { useSelector } from "react-redux"
 import userContext from "../utils/UserContext"
 import logo from "/src/assets/logo.png"
 import useCheckInternet from "/src/utils/useCheckInternet"
-// import NavItems from "/src/components/NavItems";
 
 function Header() {
     const internetStatus = useCheckInternet()
-
-    const [logName, setLogName] = useState("LogIn")
     const data = useContext(userContext)
 
     const cartItems = useSelector((store) => store.cart.items)
 
     function handleClick() {
-        if (logName === "LogIn") {
-            setLogName("LogOut")
-        } else if (logName === "LogOut") {
-            setLogName("LogIn")
+        if (data.isLoggedIn) {
+            data.setLoggedIn(false)
+            data.setUserName("")
         }
-    }
 
-    // if (logName === "LogOut") {
-    //     return <Navigate to="/login" replace/>
-    // }
+        return <Navigate to="/login" />
+    }
 
     return (
         <div className="flex row-auto justify-between shadow-lg bg-orange-50">
@@ -34,8 +28,7 @@ function Header() {
                 <span className="z-20 absolute top-20 left-24"> {internetStatus ? "🟢" : "🔴"} </span>
                 <img className="z-10 w-28 h-28" src={logo} />
             </Link>
-            {/* <NavItems />
-             */}
+
             <div className="bottom-0">
                 <ul className="flex gap-4 p-6 m-6 text-xl">
                     <li> <Link to="/" className="link-element"> Home </Link> </li>
@@ -49,11 +42,11 @@ function Header() {
                     </li>
                     {data.isLoggedIn && <li> {"👤 " + data.loggedInUser} </li>}
 
-                    <Link to="/login">
+                    {/* <Link to="/login"> */}
                         <button onClick={handleClick}>
-                            {logName}
+                            {data.isLoggedIn ? "LogOut" : "LogIn"}
                         </button>
-                    </Link>
+                    {/* </Link> */}
                 </ul>
             </div>
         </div>

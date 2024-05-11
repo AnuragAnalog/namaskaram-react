@@ -24,8 +24,6 @@ function RestaurantMenu() {
         }
     }
 
-    console.log(resInfo)
-
     return resInfo === null ? (
         <ShimmerResCard />
     ) :(

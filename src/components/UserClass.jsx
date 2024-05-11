@@ -21,8 +21,6 @@ class UserClass extends React.Component {
             userInfo: data,
             gitLink: this.state.gitLink
         })
-
-        console.log(data)
     }
 
     render() {
