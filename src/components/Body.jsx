@@ -22,8 +22,8 @@ function Body() {
     const [filteredRestro, setFilteredRestro] = useState([])
     const [searchText, setSearchText] = useState("")
     const [activeTopRated, setActiveTopRated] = useState(false)
+    const [clickSearch, setClickSearch] = useState(false)
     const { loggedInUser, setUserName, isLoggedIn } = useContext(UserContext)
-    console.log(loggedInUser, setUserName, isLoggedIn)
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
 
@@ -87,18 +87,16 @@ function Body() {
         setSearchText(event.target.value)
     }
 
-    function onSearchTextHandle() {
-        const filteredRestaurant = filteredRestro.filter((restro) => {
-            return restro.name.toLowerCase().includes(searchText.toLowerCase())
-        })
-
-        console.log(searchText)
-
-        // console.log(filteredRestaurant)
-
-        setFilteredRestro(filteredRestaurant)
-        // console.log(filteredRestro)
-    }
+    useEffect(() => {
+        if (clickSearch) {
+            const filteredRestaurant = filteredRestro.filter((restro) => {
+                return restro.name.toLowerCase().includes(searchText.toLowerCase())
+            })
+            setFilteredRestro(filteredRestaurant)
+            setClickSearch(false)
+            console.log("Filtered Restaurant")
+        }
+    }, [clickSearch])
 
     const internetStatus = useCheckInternet()
     if (internetStatus === false) {
@@ -110,11 +108,11 @@ function Body() {
             <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row justify-center items-center">
                     <div className="flex flex-row justify-between m-3 p-2 w-96 h-12 bg-red-50 items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={() => {setFilteredRestro(restros)}}>
-                        <div className="w-6 h-6" onClick={onSearchTextHandle}>
+                        <div className="w-6 h-6" onClick={() => setClickSearch(true)}>
                             <img src={search} alt="Search Image"/>
                         </div>
                         <div className="w-10/12 text-gray-400">
-                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={(e)=>setSearchText(e.target.value)} />
+                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
                         </div>
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
                             <img src={cross} alt="Cross Image"/>
