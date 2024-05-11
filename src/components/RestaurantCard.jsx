@@ -4,7 +4,6 @@ import { MEDIA_API } from "/src/utils/constants"
 
 function RestaurantCard(props) {
     const { id, name, cusinies, ratings, imgID, costForTwo } = props
-    console.log("RestaurantCard -> props", props)
 
     const trunc_names = name.length < 20 ? name : name.slice(0, 20)+"..."
     const trunc_cusinies = cusinies.join(", ").length < 30 ? cusinies.join(", ") : cusinies.join(", ").slice(0, 30)+"..."

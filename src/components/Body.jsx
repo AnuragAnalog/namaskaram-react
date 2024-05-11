@@ -34,7 +34,7 @@ function Body() {
 
     useEffect(() => {
         setRestroCards(filteredRestro.map((restro) => {
-            return <Link to={"/restaurants/"+restro.id} className="link-element">
+            return <Link key={restro.id} to={"/restaurants/"+restro.id} className="link-element">
                 {
                     restro.promoted ? <RestaurantCardPromoted
                         id={restro.id}

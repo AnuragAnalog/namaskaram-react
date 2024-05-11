@@ -40,10 +40,10 @@ function LogIn() {
                     <input className="border border-black p-2 m-2 rounded-lg" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                     <button className="bg-blue-50 p-2 m-2 rounded-lg border-2 border-solid border-black"> Submit </button>
                 </form>
-                <div className="flex flex-row gap-2 w-3/12 m-auto">
-                    <p> Don't have an account? </p>
-                    <Link className="" to="/signup">
-                        <button className="bg-blue-50 p-2 m-2 rounded-md border-2 border-solid border-black">
+                <div className="flex flex-row w-3/12 m-auto">
+                    <p className="m-auto"> Don't have an account? </p>
+                    <Link className="m-auto" to="/signup">
+                        <button className="bg-blue-50 p-2 rounded-md border-2 border-solid border-black">
                             Sign Up
                         </button>
                     </Link>

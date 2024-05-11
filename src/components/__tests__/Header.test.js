@@ -1,7 +1,7 @@
 import React from "react"
 import "@testing-library/jest-dom"
 import { fireEvent, render, screen } from "@testing-library/react"
-import NavItems from "../NavItems"
+import Header from "../Header"
 import { Provider } from "react-redux"
 import appStore from "/src/utils/appStore"
 import { BrowserRouter } from "react-router-dom"
@@ -10,7 +10,7 @@ it("Should load the login button", () => {
     render(
         <BrowserRouter>
             <Provider store={appStore}>
-                <NavItems />
+                <Header />
             </Provider>
         </BrowserRouter>
     )
@@ -25,7 +25,7 @@ it("Should change from Login Button to Logout Button on click", () => {
     render(
         <BrowserRouter>
             <Provider store={appStore}>
-                <NavItems />
+                <Header />
             </Provider>
         </BrowserRouter>
     )

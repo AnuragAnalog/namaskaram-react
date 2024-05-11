@@ -1,0 +1,57 @@
+{
+    "id": "365544",
+    "name": "Taste Of Shakes",
+    "cloudinaryImageId": "xn5yxoouyoo2ozyyq32m",
+    "locality": "Kphb Colony",
+    "areaName": "Kukatpally",
+    "costForTwo": "₹450 for two",
+    "cuisines": [
+        "Desserts",
+        "Beverages"
+    ],
+    "avgRating": 4.1,
+    "veg": true,
+    "parentId": "19534",
+    "avgRatingString": "4.1",
+    "totalRatingsString": "1K+",
+    "sla": {
+        "deliveryTime": 31,
+        "lastMileTravel": 5.9,
+        "serviceability": "SERVICEABLE",
+        "slaString": "30-35 mins",
+        "lastMileTravelString": "5.9 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2024-05-12 23:59:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "orderabilityCommunication": {
+        "title": {},
+        "subTitle": {},
+        "message": {},
+        "customIcon": {}
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}

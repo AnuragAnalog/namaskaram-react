@@ -47,10 +47,10 @@ function SignUp() {
                     </button>
                 </form>
 
-                <div className="flex flex-row gap-2 w-8/12 m-auto">
-                    <p> Already have an account? </p>
-                    <Link to="/login">
-                        <button className="bg-blue-50 p-2 m-2 rounded-md border-2 border-solid border-black">
+                <div className="flex flex-row w-8/12 m-auto">
+                    <p className="m-auto"> Already have an account? </p>
+                    <Link className="m-auto" to="/login">
+                        <button className="bg-blue-50 p-2 rounded-md border-2 border-solid border-black">
                             Log In
                         </button>
                     </Link>

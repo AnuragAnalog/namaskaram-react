@@ -16,13 +16,13 @@ function NestedItemCategory(props) {
 
     return (
         <>
-            <div>
-                <h3> {name.toUpperCase()} </h3>
+            <div className="flex flex-col bg-slate-200 m-auto w-full p-2 rounded-xl">
+                <h3 className="m-auto text-xl font-bold"> {name.toUpperCase()}{` (${categories.length})`} </h3>
                 <p>
-                    <ul>
+                    <div className="flex flex-col gap-2">
                         {
                             categories.map((category, index) => {
-                                return <li key={index}>
+                                return <div key={index}>
                                     <ItemCategory
                                                 name={category.title}
                                                 items={category.itemCards}
@@ -30,18 +30,10 @@ function NestedItemCategory(props) {
                                                 showItems={index === showIndex ? true : false}
                                                 changeShowIndex={() => checkSameIndex(index)}
                                                 />
-                                    {/* <h4> {category.title} </h4>
-                                    <ul>
-                                        {
-                                            category.itemCards.map((item, index) => {
-                                                return <ItemCard key={index} item={item.card.info} />
-                                            })
-                                        }
-                                    </ul>  */}
-                                </li>
+                                </div>
                             })
                         }
-                    </ul>
+                    </div>
                 </p>
             </div>
         </>
