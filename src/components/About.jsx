@@ -25,7 +25,7 @@ class About extends React.Component {
                             { (data) => {console.log(data)} }
                         </UserContext.Consumer>
                     </div> */}
-                    <div className="flex flex-wrap w-10/12 m-auto gap-3">
+                    <div className="flex flex-wrap w-9/12 m-auto gap-3">
                         {DEV_INFO.map((url) => {
                             return <UserClass gitLink={url}/>
                         })}

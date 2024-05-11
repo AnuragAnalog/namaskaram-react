@@ -92,6 +92,8 @@ function Body() {
             return restro.name.toLowerCase().includes(searchText.toLowerCase())
         })
 
+        console.log(searchText)
+
         // console.log(filteredRestaurant)
 
         setFilteredRestro(filteredRestaurant)
@@ -112,7 +114,7 @@ function Body() {
                             <img src={search} alt="Search Image"/>
                         </div>
                         <div className="w-10/12 text-gray-400">
-                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
+                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={(e)=>setSearchText(e.target.value)} />
                         </div>
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
                             <img src={cross} alt="Cross Image"/>

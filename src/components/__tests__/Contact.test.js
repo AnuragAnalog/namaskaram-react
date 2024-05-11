@@ -21,7 +21,7 @@ it("Should load button in Contact component", () => {
 })
 
 describe("Testing the Input buttons", () => {
-    test("Should load input field in Contact component", () => {
+    it("Should load input field in Contact component", () => {
         render(<Contact />)
     
         const inputName = screen.getByPlaceholderText("Name")
