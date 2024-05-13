@@ -17,7 +17,8 @@
   "main": "/src/App.js",
   "scripts": {
     "start": "npx parcel index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",

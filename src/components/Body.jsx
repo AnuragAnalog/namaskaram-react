@@ -10,8 +10,8 @@ import useCheckInternet from "/src/utils/useCheckInternet";
 import UserContext from "/src/utils/UserContext";
 
 // Image Imports
-import cross from "/src/assets/close.png"
-import search from "/src/assets/magnifying-glass.png"
+// import cross from "/src/assets/close.png"
+// import search from "/src/assets/magnifying-glass.png"
 
 // Shimmer Imports
 import { ShimmerBody } from "/src/components/Shimmer"
@@ -59,7 +59,7 @@ function Body() {
     async function fetchData() {
         const data = await fetch(DATA_URL)
         const jsonData = await data.json()
-        // console.log(jsonData)
+        console.log(jsonData)
         var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
         tempData = tempData.map((restro) => {
             return restro.info
@@ -102,9 +102,9 @@ function Body() {
         return <Offline />
     }
 
-    if (!isLoggedIn) {
-        return <Navigate to="/login" />
-    }
+    // if (!isLoggedIn) {
+    //     return <Navigate to="/login" />
+    // }
 
     return restroCards.length == 0 ? <ShimmerBody /> : <>
         <div className="body">
@@ -112,13 +112,13 @@ function Body() {
                 <div className="flex flex-row justify-center items-center">
                     <div className="flex flex-row justify-between m-3 p-2 w-96 h-12 bg-red-50 items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={() => {setFilteredRestro(restros)}}>
                         <div className="w-6 h-6" onClick={() => setClickSearch(true)}>
-                            <img src={search} alt="Search Image"/>
+                            <img src={""} data-testid="search-btn" alt="Search Image"/>
                         </div>
                         <div className="w-10/12 text-gray-400">
-                            <input className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
+                            <input name="search-text" className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
                         </div>
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
-                            <img src={cross} alt="Cross Image"/>
+                            <img src={""} alt="Cross Image"/>
                         </div>
                     </div>
                     {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}
@@ -130,7 +130,7 @@ function Body() {
                     <span className="m-auto" onClick={onClickHandle}> Top Rated </span>
                     {activeTopRated &&
                         <div className="m-auto w-3 h-3" onClick={resetTopRated}>
-                            <img src={cross} alt="Cross Image"/>
+                            <img src={""} alt="Cross Image"/>
                         </div>}
                 </div>
             </div>

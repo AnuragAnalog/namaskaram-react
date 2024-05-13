@@ -352,3 +352,14 @@ The regex match for the testing files is: "\*\*/\__tests\__/\*\*/*.[jt]s?(x), **
 ## Error Tips
 
 * Do not update the state from the event handler functions, if you do so, react will ignore the update.
+* If you get any error related to testing components using router-dom functions, then you need to wrap them around `<BrowserRouter>` or `<MemoryRouter>`
+* If a component has an async/await, then wrap it in the act function
+```js
+it("Should fetch some sample data", async () => {
+    await act(
+        async () => {
+            await render(<Component />)
+        }
+    )
+})
+```
