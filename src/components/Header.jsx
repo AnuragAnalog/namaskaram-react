@@ -23,7 +23,7 @@ function Header() {
     }
 
     return (
-        <div className="flex row-auto justify-between shadow-lg bg-orange-50">
+        <div className="flex flex-row justify-between mb-10 shadow-lg bg-orange-50">
             <Link to="/" className="m-2">
                 <span className="z-20 absolute top-20 left-24"> {internetStatus ? "🟢" : "🔴"} </span>
                 <img className="z-10 w-28 h-28" src={logo} />

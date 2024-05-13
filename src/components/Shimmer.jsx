@@ -16,9 +16,11 @@ export function ShimmerBody() {
 export function ShimmerResCard() {
     return (
         <>
-            <ShimmerThumbnail height={250} rounded />
-            <ShimmerText line={2} gap={10} />
-            <ShimmerContentBlock title text cta thumbnailWidth={370} thumbnailHeight={370} />
+            <div className="w-9/12 m-auto">
+                <ShimmerThumbnail height={250} rounded />
+                <ShimmerText line={2} gap={10} />
+                <ShimmerContentBlock title text cta thumbnailWidth={370} thumbnailHeight={370} />
+            </div>
         </>
     )
 }
