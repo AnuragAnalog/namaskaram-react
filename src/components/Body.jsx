@@ -59,7 +59,7 @@ function Body() {
     async function fetchData() {
         const data = await fetch(DATA_URL)
         const jsonData = await data.json()
-        console.log(jsonData)
+        // console.log(jsonData)
         var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
         tempData = tempData.map((restro) => {
             return restro.info
@@ -118,7 +118,7 @@ function Body() {
                             <input name="search-text" className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
                         </div>
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
-                            <img src={""} alt="Cross Image"/>
+                            <img src={""} data-testid="search-cross-btn" alt="Cross Image"/>
                         </div>
                     </div>
                     {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}
@@ -127,7 +127,7 @@ function Body() {
                     {/* </button> */}
                 </div>
                 <div className={"flex flex-row w-32 h-12 bg-red-50 text-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black"}>
-                    <span className="m-auto" onClick={onClickHandle}> Top Rated </span>
+                    <span className="m-auto" data-testid="top-rated" onClick={onClickHandle}> Top Rated </span>
                     {activeTopRated &&
                         <div className="m-auto w-3 h-3" onClick={resetTopRated}>
                             <img src={""} alt="Cross Image"/>

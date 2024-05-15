@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 // import cart from "/src/assets/cart.png"
 import userContext from "../utils/UserContext"
-import logo from "/src/assets/logo.png"
+// import logo from "/src/assets/logo.png"
 import useCheckInternet from "/src/utils/useCheckInternet"
 
 function Header() {
@@ -26,7 +26,7 @@ function Header() {
         <div className="flex flex-row justify-between mb-10 shadow-lg bg-orange-50">
             <Link to="/" className="m-2">
                 <span className="z-20 absolute top-20 left-24"> {internetStatus ? "🟢" : "🔴"} </span>
-                <img className="z-10 w-28 h-28" src={logo} />
+                <img className="z-10 w-28 h-28" src={"/src/assets/logo.png"} />
             </Link>
 
             <div className="bottom-0">

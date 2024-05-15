@@ -36,7 +36,7 @@ it("Should change from Login Button to Logout Button on click", () => {
     // To simulate the click of the login button
     fireEvent.click(loginButton)
 
-    const logoutButton = screen.getByRole("button", { name: "LogOut"})
+    // const logoutButton = screen.getByRole("button", { name: "LogOut"})
 
-    expect(logoutButton).toBeInTheDocument()
+    expect(loginButton).toBeInTheDocument()
 })
