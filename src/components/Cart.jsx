@@ -17,7 +17,7 @@ function Cart() {
         <>
             <div className="text-center p-4 w-6/12 m-auto">
                 <h1 className="text-4xl text-center font-extrabold"> Cart </h1>
-                <button className="bg-gray-50 p-2 rounded-lg shadow-lg" onClick={clearCartItems}> Clear Cart </button>
+                <button className="bg-gray-50 p-2 rounded-lg shadow-lg" data-testid="clear-cart" onClick={clearCartItems}> Clear Cart </button>
                 {
                     cartItems.map((itemInfo) => {
                         return (<>

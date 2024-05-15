@@ -28,7 +28,7 @@ function ItemCard(props) {
             <div key={key} data-testid="food-item" className="flex flex-col m-2 gap-1">
                 <div className="flex flex-row gap-4 w-[100%] h-52 justify-between">
                     <div className="w-[70%] h-[100%] mx-1">
-                        <img className="w-4 h-4 m-0" src={item.isVeg === 1 ? "/src/assets/veg-symbol.png" : "/src/assets/veg-symbol.png"} alt="veg"/>
+                        <img className="w-4 h-4 m-0" src={item.isVeg === 1 ? "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/veg-symbol.png" : "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/non-veg-symbol.png"} alt="veg"/>
                         <div className="font-extrabold m-0 text-base"> {item.name} </div>
                         <p> {RUPEE_SYMBOL}{item.price / 100 || item.defaultPrice / 100} </p>
                         <br />

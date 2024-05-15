@@ -9,10 +9,6 @@ import { DATA_URL } from "/src/utils/constants";
 import useCheckInternet from "/src/utils/useCheckInternet";
 import UserContext from "/src/utils/UserContext";
 
-// Image Imports
-// import cross from "/src/assets/close.png"
-// import search from "/src/assets/magnifying-glass.png"
-
 // Shimmer Imports
 import { ShimmerBody } from "/src/components/Shimmer"
 
@@ -112,13 +108,13 @@ function Body() {
                 <div className="flex flex-row justify-center items-center">
                     <div className="flex flex-row justify-between m-3 p-2 w-96 h-12 bg-red-50 items-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black" onClick={() => {setFilteredRestro(restros)}}>
                         <div className="w-6 h-6" onClick={() => setClickSearch(true)}>
-                            <img src={""} data-testid="search-btn" alt="Search Image"/>
+                            <img src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/magnifying-glass.png"} data-testid="search-btn" alt="Search Image"/>
                         </div>
                         <div className="w-10/12 text-gray-400">
                             <input name="search-text" className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
                         </div>
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
-                            <img src={""} data-testid="search-cross-btn" alt="Cross Image"/>
+                            <img src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/close.png"} data-testid="search-cross-btn" alt="Cross Image"/>
                         </div>
                     </div>
                     {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}

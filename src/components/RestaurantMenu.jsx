@@ -40,7 +40,7 @@ function RestaurantMenu() {
                     <div className="flex flex-row text-sm gap-2 justify-center items-center">
                         <p className="text-gray-500 font-semibold flex flex-row justify-center items-center">
                             {resInfo.avgRating}
-                            <img className="w-6 h-4" src={"/src/assets/star.png"} alt="star"/>
+                            <img className="w-6 h-4" src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/star.png"} alt="star"/>
                         </p>
                         <p className="text-gray-500 font-semibold"> {resInfo.veg ? "VEG" : "Non-veg"} </p>
                         <p className="text-gray-500 font-semibold"> {resInfo.costForTwoMessage} </p>
