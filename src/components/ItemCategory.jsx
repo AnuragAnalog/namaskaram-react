@@ -30,6 +30,7 @@ function ItemCategory(props) {
                         <h3> {`${name.toUpperCase()} (${itemCount})`} </h3>
                         <img src={showItems ? "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/up-arrow.png" : "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/down-arrow.png"} className="w-7 h-7"></img>
                     </div>
+
                     {
                         showItems && items.map((item) => {
                             return <ItemCard 

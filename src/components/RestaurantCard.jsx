@@ -11,6 +11,7 @@ function RestaurantCard(props) {
     return <>
         <div data-testid="resCard" key={id} className="flex flex-col hover:cursor-pointer hover:bg-gray-300 w-64 h-[400px] gap-5 shadow-xl bg-gray-100 rounded-xl">
             <img className="w-full h-[65%] self-center rounded-t-xl" src={MEDIA_API+imgID} alt="name"/>
+
             <div className="mx-2">
                 <h3 className="m-0 text-xl font-bold font-sans"> {trunc_names} </h3>
                 <h5 className="m-0"> {trunc_cusinies} </h5>

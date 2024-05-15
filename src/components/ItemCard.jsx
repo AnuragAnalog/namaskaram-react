@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { RUPEE_SYMBOL, MEDIA_API } from "/src/utils/constants"
 import { addItem } from "/src/utils/cartSlice"
-// import nofood from "/src/assets/no-food-img.png"
-// import veg from "/src/assets/veg-symbol.png"
-// import nonveg from "/src/assets/non-veg-symbol.png"
 
 function ItemCard(props) {
     const { key, item, onlyVeg } = props
@@ -34,6 +31,7 @@ function ItemCard(props) {
                         <br />
                         <p> {item.description} </p>
                     </div>
+
                     <div className="w-[25%] justify-center items-center flex flex-col">
                         <div className="absolute">
                             <button className="p-2 rounded-lg bg-white hover:bg-gray-200 text-green-700 font-extrabold shadow-lg" onClick={() => addToCart(item)}>
@@ -43,6 +41,7 @@ function ItemCard(props) {
                         <img className="w-[80%] h-[80%] rounded-[5%]" src={item.imageId ? MEDIA_API+item.imageId : "/src/assets/veg-symbol.png"} alt={item.imageId} />
                     </div>
                 </div>
+
                 <hr className="w-[100%] border border-solid border-gray-500 self-center"/>
             </div>
         </>

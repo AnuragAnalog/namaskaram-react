@@ -7,7 +7,6 @@ import ItemCategory from "/src/components/ItemCategory"
 import NestedItemCategory from "/src/components/NestedItemCategory"
 import useResData from "/src/utils/useResData"
 
-// import star from "/src/assets/star.png"
 import { ShimmerResCard } from "/src/components/Shimmer"
 
 function RestaurantMenu() {

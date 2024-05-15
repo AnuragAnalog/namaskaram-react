@@ -110,18 +110,17 @@ function Body() {
                         <div className="w-6 h-6" onClick={() => setClickSearch(true)}>
                             <img src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/magnifying-glass.png"} data-testid="search-btn" alt="Search Image"/>
                         </div>
+
                         <div className="w-10/12 text-gray-400">
                             <input name="search-text" className="w-full bg-transparent" value={searchText} placeholder="Search here for food, beverages, etc." onChange={onSearchHandle} />
                         </div>
+
                         <div className="w-3 h-3" onClick={() => {setSearchText("")}}>
                             <img src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/close.png"} data-testid="search-cross-btn" alt="Cross Image"/>
                         </div>
                     </div>
-                    {/* <input className="m-2 w-96 h-8 rounded-l-full rounded-r-full border shadow-lg border-solid border-black" value={searchText} onChange={onSearchHandle} /> */}
-                    {/* <button className="m-3 w-40 h-8 bg-blue-50 rounded-md border border-solid border-black" onClick={onSearchTextHandle}> */}
-                        {/* Search */}
-                    {/* </button> */}
                 </div>
+
                 <div className={"flex flex-row w-32 h-12 bg-red-50 text-center rounded-l-full rounded-r-full border shadow-xl border-solid border-black"}>
                     <span className="m-auto" data-testid="top-rated" onClick={onClickHandle}> Top Rated </span>
                     {activeTopRated &&
@@ -130,10 +129,12 @@ function Body() {
                         </div>}
                 </div>
             </div>
+
             <div className="">
                 <label className="m-2"> Logged In User: </label>
                 <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={loggedInUser} onChange={(e) => {setUserName(e.target.value)}}/>
             </div>
+
             <div className="flex flex-wrap w-3/4 justify-center items-center m-auto gap-6">
                 {restroCards}
             </div>

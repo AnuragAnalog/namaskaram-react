@@ -9,10 +9,12 @@ function Welcome() {
                 <h1 className="font-bold text-3xl p-4 m-auto">
                     Welcome!
                 </h1>
+
                 <div className="flex flex-col gap-5 w-4/12 m-auto">
                     <p className="text-2xl m-auto">
                         You have successfully logged in!
                     </p>
+
                     <Link className="m-auto" to="/">
                         <button className="bg-blue-50 p-2 rounded-md border-2 border-solid border-black">
                             Go to Home

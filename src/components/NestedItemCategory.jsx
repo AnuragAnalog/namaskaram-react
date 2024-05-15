@@ -18,6 +18,7 @@ function NestedItemCategory(props) {
         <>
             <div className="flex flex-col bg-slate-200 m-auto w-full p-2 rounded-xl">
                 <h3 className="m-auto text-xl font-bold"> {name.toUpperCase()}{` (${categories.length})`} </h3>
+
                 <div>
                     <div className="flex flex-col gap-2">
                         {

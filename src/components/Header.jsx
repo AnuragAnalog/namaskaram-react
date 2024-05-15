@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-// import cart from "/src/assets/cart.png"
 import userContext from "../utils/UserContext"
 import useCheckInternet from "/src/utils/useCheckInternet"
 
