@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import { RUPEE_SYMBOL, MEDIA_API } from "/src/utils/constants"
+import { RUPEE_SYMBOL, MEDIA_API, NO_FOOD_IMG, VEG_SYMBOL, NON_VEG_SYMBOL } from "/src/utils/constants"
 import { addItem } from "/src/utils/cartSlice"
 
 function ItemCard(props) {
@@ -23,22 +23,20 @@ function ItemCard(props) {
     </>) : (
         <>
             <div key={key} data-testid="food-item" className="flex flex-col m-2 gap-1">
-                <div className="flex flex-row gap-4 w-[100%] h-52 justify-between">
+                <div className="flex flex-row gap-4 w-[100%] h-56 justify-between">
                     <div className="w-[70%] h-[100%] mx-1">
-                        <img className="w-4 h-4 m-0" src={item.isVeg === 1 ? "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/veg-symbol.png" : "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/non-veg-symbol.png"} alt="veg"/>
+                        <img className="w-4 h-4 m-0" src={item.isVeg === 1 ? VEG_SYMBOL : NON_VEG_SYMBOL} alt="veg"/>
                         <div className="font-extrabold m-0 text-base"> {item.name} </div>
                         <p> {RUPEE_SYMBOL}{item.price / 100 || item.defaultPrice / 100} </p>
                         <br />
                         <p> {item.description} </p>
                     </div>
 
-                    <div className="w-[25%] justify-center items-center flex flex-col">
-                        <div className="absolute">
-                            <button className="p-2 rounded-lg bg-white hover:bg-gray-200 text-green-700 font-extrabold shadow-lg" onClick={() => addToCart(item)}>
-                                 Add +
-                            </button>
-                        </div>
-                        <img className="w-[80%] h-[80%] rounded-[5%]" src={item.imageId ? MEDIA_API+item.imageId : "/src/assets/veg-symbol.png"} alt={item.imageId} />
+                    <div className="w-[25%] justify-center items-center flex flex-col relative">
+                        <img className="z-10 w-[80%] h-[80%] rounded-[5%]" src={item.imageId ? MEDIA_API+item.imageId : NO_FOOD_IMG} alt={item.imageId} />
+                        <button className="z-20 bottom-0 absolute p-2 rounded-lg bg-white hover:bg-gray-200 text-green-700 font-extrabold shadow-lg" onClick={() => addToCart(item)}>
+                             Add +
+                        </button>
                     </div>
                 </div>
 

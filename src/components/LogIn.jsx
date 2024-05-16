@@ -17,7 +17,6 @@ function LogIn() {
 
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => { 
             const userInfo = userCredential.user
-            console.log(userInfo)
             setLoggedIn(true)
             setUserName(userInfo.email)
         }).catch((error) => {

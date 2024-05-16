@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 
 import userContext from "../utils/UserContext"
 import useCheckInternet from "/src/utils/useCheckInternet"
+import { LOGO_IMG, CART_IMG } from "/src/utils/constants"
 
 function Header() {
     const internetStatus = useCheckInternet()
@@ -24,7 +25,7 @@ function Header() {
         <div className="flex flex-row justify-between mb-10 shadow-lg bg-orange-50">
             <Link to="/" className="m-2">
                 <span className="z-20 absolute top-20 left-24"> {internetStatus ? "🟢" : "🔴"} </span>
-                <img className="z-10 w-28 h-28" src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/logo.png"} />
+                <img className="z-10 w-28 h-28" src={LOGO_IMG} />
             </Link>
 
             <div className="bottom-0">
@@ -35,7 +36,7 @@ function Header() {
                     <li> <Link to="/grocery" className="link-element"> Grocery </Link> </li>
                     <li>
                         <Link to="/cart" className="flex flex-row gap-1 justify-center items-center link-element">
-                            <img className="w-6 h-6" src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/cart.png"} /> {cartItems.length !== 0 ? cartItems.length+"Items" : ""}
+                            <img className="w-6 h-6" src={CART_IMG} /> {cartItems.length !== 0 ? cartItems.length+"Items" : ""}
                         </Link>
                     </li>
                     {data.isLoggedIn && <li> {"👤 " + data.loggedInUser} </li>}

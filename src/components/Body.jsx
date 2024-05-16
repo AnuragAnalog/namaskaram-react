@@ -2,12 +2,13 @@ import React from "react"
 import { useState, useEffect, useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 
+// Components, Contexts and Hooks Imports
 import RestaurantCard, { WithPromotedLabel } from "/src/components/RestaurantCard";
 import Offline from "/src/components/Offline";
 // import useData from "/src/utils/useData";
-import { DATA_URL } from "/src/utils/constants";
 import useCheckInternet from "/src/utils/useCheckInternet";
 import UserContext from "/src/utils/UserContext";
+import { DATA_URL, CLOSE_IMG, MAGNIFYING_GLASS_IMG, CART_IMG } from "/src/utils/constants";
 
 // Shimmer Imports
 import { ShimmerBody } from "/src/components/Shimmer"
@@ -22,6 +23,12 @@ function Body() {
     const { loggedInUser, setUserName, isLoggedIn } = useContext(UserContext)
 
     const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard)
+    const internetStatus = useCheckInternet()
+
+    // Check if the user is offline
+    if (internetStatus === false) {
+        return <Offline />
+    }
 
     // const resInfo = useData()
     useEffect(() => {
@@ -93,14 +100,9 @@ function Body() {
         }
     }, [clickSearch])
 
-    const internetStatus = useCheckInternet()
-    if (internetStatus === false) {
-        return <Offline />
+    if (!isLoggedIn) {
+        return <Navigate to="/login" />
     }
-
-    // if (!isLoggedIn) {
-    //     return <Navigate to="/login" />
-    // }
 
     return restroCards.length == 0 ? <ShimmerBody /> : <>
         <div className="body">
@@ -125,7 +127,7 @@ function Body() {
                     <span className="m-auto" data-testid="top-rated" onClick={onClickHandle}> Top Rated </span>
                     {activeTopRated &&
                         <div className="m-auto w-3 h-3" onClick={resetTopRated}>
-                            <img src={""} alt="Cross Image"/>
+                            <img src={"https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/close.png"} alt="Cross Image"/>
                         </div>}
                 </div>
             </div>

@@ -18,3 +18,16 @@ export const DEV_INFO = [
     "https://api.github.com/users/yesdeep",
     "https://api.github.com/users/abhishekveeravelli",
 ]
+
+// Image URLs
+export const NO_FOOD_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/no-food-img.png"
+export const VEG_SYMBOL = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/veg-symbol.png"
+export const NON_VEG_SYMBOL = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/non-veg-symbol.png"
+export const CART_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/cart.png"
+export const SEARCH_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/magnifying-glass.png"
+export const LOGO_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/logo.png"
+export const CLOSE_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/close.png"
+export const DOWN_ARROW_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/down-arrow.png"
+export const UP_ARROW_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/up-arrow.png"
+export const MAGNIFYING_GLASS_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/magnifying-glass.png"
+export const STAR_IMG = "https://raw.githubusercontent.com/AnuragAnalog/namaskaram-react/main/src/assets/star.png"

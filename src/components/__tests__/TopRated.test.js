@@ -3,6 +3,7 @@ import { MemoryRouter } from "react-router-dom"
 import { act } from "react-dom/test-utils"
 import { render, screen, fireEvent } from "@testing-library/react"
 
+import UserContext from "/src/utils/UserContext"
 import ALL_DATA from "/src/components/mocks/BodyCardMocks.json"
 import Body from "/src/components/Body"
 
@@ -16,7 +17,10 @@ global.fetch = jest.fn(() => {
 
 it("Should filter the top rated restaurants", async () => {
     await act(async () => {
-        render(<Body />, { wrapper: MemoryRouter })
+        render(
+        <UserContext.Provider value={{ isLoggedIn: true }}>
+            <Body />
+        </UserContext.Provider>, { wrapper: MemoryRouter })
     })
 
     const cardsBeforeClick = screen.getAllByTestId("resCard")
