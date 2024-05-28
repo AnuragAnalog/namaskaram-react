@@ -18,7 +18,8 @@
   "scripts": {
     "start": "npx parcel index.html",
     "test": "jest",
-    "watch-test": "jest --watch"
+    "watch-test": "jest --watch",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
