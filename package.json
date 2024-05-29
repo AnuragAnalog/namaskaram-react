@@ -18,7 +18,7 @@
     "start": "npx parcel index.html",
     "test": "jest",
     "watch-test": "jest --watch",
-    "build": "parcel build index.html"
+    "build": "parcel build src/App.js"
   },
   "repository": {
     "type": "git",
