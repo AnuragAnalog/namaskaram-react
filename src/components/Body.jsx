@@ -63,7 +63,7 @@ function Body() {
         const data = await fetch(DATA_URL)
         const jsonData = await data.json()
         // console.log(jsonData)
-        var tempData = jsonData.data.cards[3].card.card.gridElements.infoWithStyle.restaurants
+        var tempData = jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
         tempData = tempData.map((restro) => {
             return restro.info
         })
@@ -132,10 +132,10 @@ function Body() {
                 </div>
             </div>
 
-            {/* <div className="">
+            <div className="">
                 <label className="m-2"> Logged In User: </label>
                 <input className="m-2 w-96 h-8 rounded-md border-2 border-solid border-black" value={loggedInUser} onChange={(e) => {setUserName(e.target.value)}}/>
-            </div> */}
+            </div>
 
             <div className="flex flex-wrap w-3/4 justify-center items-center m-auto gap-6">
                 {restroCards}
