@@ -33,5 +33,6 @@ The app uses parcel as the bundler, so you can run the app by following the belo
 
 ## Live Demo
 
-![[!Anurag's Food](https://img.youtube.com/vi/eX74nIEQGww/maxresdefault.jpg)](https://www.youtube.com/watch?v=eX74nIEQGww)
+![Anurag's Food]("./demo.gif")
+<!-- ![[!Anurag's Food](https://img.youtube.com/vi/eX74nIEQGww/maxresdefault.jpg)](https://www.youtube.com/watch?v=eX74nIEQGww) -->
 
